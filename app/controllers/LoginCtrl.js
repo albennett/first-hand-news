@@ -20,18 +20,5 @@ app.controller("LoginCtrl", ["$scope", "$location", "$firebaseObject", "$firebas
     if (authData !== null) {
     	$location.path("/home");
     }
-
-    function authWithFB() {
-
-      ref.authWithOAuthPopup("facebook", function(error, authData) { //1.firebase sends request for request token to github with client id and secret id
-        if (error) {
-          console.log("Login Failed!", error);
-        } else {
-          console.log("Authenticated successfully with payload:", authData);
-          $location.path("#/home");
-        }
-      });
-    }
     
-
 }]);
