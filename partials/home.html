@@ -11,6 +11,9 @@
 	      </div>
 	      <div id="modal-body" class="modal-body">
 	      <input type="text" id="category" ng-model="categoryTitle" class="form-control" placeholder="Add category title">
+	      <select ng-model="selectedcategory" ng-options="category.title for category in allCategories">
+	      	
+	      </select>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -21,3 +24,9 @@
 	</div><!-- /.modal -->
 
 <button ng-click= "logout()">log out </button>
+
+<div ng-repeat="category in allCategories">
+ <div class="img-wrap col-md-3">
+ 	<h1>{{category.title}}</h1>
+ </div>
+</div>
