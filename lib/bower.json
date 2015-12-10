@@ -1,0 +1,25 @@
+{
+  "name": "modules",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Amy Lee <amyleeannebennett@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/albennett/first-hand-accounts",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "angularfire": "~1.1.3"
+  }
+}
