@@ -8,13 +8,25 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   var createdCategoryId;
   $('#CategoryModal').modal();
   var storyInput = "";
-
+  $scope.sendStory;
+  var createdCategoryId = "";
   var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
   $scope.allCategories = $firebaseArray(categoriesRef);
   console.log("scope.allCategories", $scope.allCategories);
-
   var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories")
   $scope.allStories = $firebaseArray(storyRef);
+  $scope.categoryTitle = "";
+  $scope.sendStory;
+  $scope.storyLukeCreated = {};
+
+  $scope.Categories = function () {
+    if ($scope.categoryTitle === "") {
+      $scope.storyLukeCreated.createdCategory = $scope.selectedCategory.$id;
+    } else {
+      console.log("created", $scope.categoryTitle);
+      $scope.sendCategory();
+    }
+  }
 
   $scope.sendCategory = function() {
     console.log("selectedcat", $scope.selectedCategory);
@@ -22,29 +34,15 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
       userId: authData.uid,
       title: $scope.categoryTitle   
     }).then(function(createdcat){
-      // if (selec)
-      var createdCategoryId = createdcat.key();
-      $scope.sendStory = function () {
-        $scope.allStories.$add({
-        // chosenCategory: $scope.selectedCategory.$id,
-        createdCategory: createdCategoryId,
-        input: $scope.storyInput
-      }) 
-    }
+       // $scope.sendStory(createdcat);
+       var createdCategoryId = createdcat.key();
+       $scope.storyLukeCreated.createdCategory = createdCategoryId;
     }) 
   }
 
-  $scope.sendChosenCategory = function() {
-    console.log("selectedcat", $scope.selectedCategory.$id);
-    $scope.sendChosenStory = function() {
-      $scope.allStories.$add({
-        chosenCategory: $scope.selectedCategory.$id,
-        input: $scope.storyInput
-      })  
-    }
+  $scope.Stories = function () {
+    $scope.storyLukeCreated.input = $scope.storyInput;
+    $scope.allStories.$add($scope.storyLukeCreated)
   }
-
-        // chosenCategory: $scope.selectedCategory.$id,
-
 
 }]);

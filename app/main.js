@@ -11,11 +11,11 @@ app.config(['$routeProvider',
       when('/home', {
         templateUrl: 'partials/home.html',
         controller: 'HomeCtrl'
-      })
-      // when('/profile', {
-      //   templateUrl: 'partials/profile.html',
-      //   controller: 'ProfileCtrl'
-      // }).
+      }).
+      when('/create', {
+        templateUrl: 'partials/createstory.html',
+        controller: 'CreateStoryCtrl'
+      });
       // when('/animals', {
       //   templateUrl: 'partials/animals.html',
       //   controller: 'ProfileCtrl'

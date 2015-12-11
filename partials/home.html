@@ -1,27 +1,8 @@
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#CategoryModal">
+<button type="button" class="btn btn-primary btn-lg" data-target="#CategoryModal">
   Write a story
 </button>
 
-<!-- Create/Choose category modal -->
-	<div class="modal fade" id="CategoryModal">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h4 class="modal-title">Choose or Create Category</h4>
-	      </div>
-	      <div id="modal-body" class="modal-body">
-	      <input type="text" id="category" ng-model="categoryTitle" class="form-control" placeholder="Add category title">
-	      <select ng-model="selectedcategory" ng-options="category.title for category in allCategories">
-	      	
-	      </select>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary" ng-click="sendCategory()" data-dimiss="modal">Submit</button>
-	      </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+
 
 <button ng-click= "logout()">log out </button>
 
