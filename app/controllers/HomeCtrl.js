@@ -1,5 +1,5 @@
-app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth",
-  function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth) {
+app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth", "StorageFactory",
+  function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth, StorageFactory) {
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
   var userExists = false;
@@ -8,6 +8,15 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
   var auth;
   $scope.selectedCategory="";
   var createdCategoryId;
+  var eventCategoryId;
+
+  document.querySelector("body").addEventListener("click", function(event) {
+    console.log(event);
+    console.log("event.tar", event.target.id);
+    eventCategoryId = event.target.id; 
+  });
+
+  StorageFactory.setCategoryId(eventCategoryId);
 
    //Logout, unauthorizes the user and logs them back out
     $scope.logout = function(){
@@ -39,6 +48,7 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
   //firebase ref for categories
   var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
   $scope.allCategories = $firebaseArray(categoriesRef);
+  console.log("scope.allCategories", $scope.allCategories);
   
     
 

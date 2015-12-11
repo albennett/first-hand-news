@@ -7,7 +7,7 @@
 <button ng-click= "logout()">log out </button>
 
 <div ng-repeat="category in allCategories">
- <div class="img-wrap col-md-3">
- 	<h1>{{category.title}}</h1>
+ <div class="img-wrap col-md-3" id="{{category.$id}}">
+ 	<h1 id="{{category.$id}}"><a href="#/profiles/{{category.$id}}">{{category.title}}</a></h1>
  </div>
 </div>

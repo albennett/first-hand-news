@@ -3,12 +3,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
   var authData = $firebaseAuth(ref).$getAuth();
-  var auth;
   $scope.selectedCategory = "";
-  var createdCategoryId;
-  $('#CategoryModal').modal();
-  var storyInput = "";
-  $scope.sendStory;
   var createdCategoryId = "";
   var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
   $scope.allCategories = $firebaseArray(categoriesRef);
@@ -16,12 +11,12 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories")
   $scope.allStories = $firebaseArray(storyRef);
   $scope.categoryTitle = "";
-  $scope.sendStory;
-  $scope.storyLukeCreated = {};
+  $scope.storyCreated = {};
+  $('#CategoryModal').modal();
 
   $scope.Categories = function () {
     if ($scope.categoryTitle === "") {
-      $scope.storyLukeCreated.createdCategory = $scope.selectedCategory.$id;
+      $scope.storyCreated.Category = $scope.selectedCategory.$id;
     } else {
       console.log("created", $scope.categoryTitle);
       $scope.sendCategory();
@@ -34,15 +29,14 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
       userId: authData.uid,
       title: $scope.categoryTitle   
     }).then(function(createdcat){
-       // $scope.sendStory(createdcat);
-       var createdCategoryId = createdcat.key();
-       $scope.storyLukeCreated.createdCategory = createdCategoryId;
+       createdCategoryId = createdcat.key();
+       $scope.storyCreated.Category = createdCategoryId;
     }) 
   }
 
   $scope.Stories = function () {
-    $scope.storyLukeCreated.input = $scope.storyInput;
-    $scope.allStories.$add($scope.storyLukeCreated)
+    $scope.storyCreated.input = $scope.storyInput;
+    $scope.allStories.$add($scope.storyCreated);
   }
 
 }]);

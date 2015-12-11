@@ -15,12 +15,16 @@ app.config(['$routeProvider',
       when('/create', {
         templateUrl: 'partials/createstory.html',
         controller: 'CreateStoryCtrl'
-      });
-      // when('/animals', {
-      //   templateUrl: 'partials/animals.html',
-      //   controller: 'ProfileCtrl'
-      // })
-      // .otherwise({ redirectTo: '/'});
+      }).
+      // when('/category', {
+      //   templateUrl: 'partials/categoryview.html',
+      //   controller: 'CategoryViewCtrl'
+      // }).
+      when('/category/:category_id', {
+        templateUrl: 'partials/categoryview.html',
+        controller: 'CategoryViewCtrl'
+      })
+      .otherwise({ redirectTo: '/'});
   }]);
 
 app.run(function () {
