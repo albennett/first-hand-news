@@ -6,9 +6,8 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
   var authData = $firebaseAuth(ref).$getAuth();
   console.log("authdata2", authData);
   var auth;
-  $scope.categoryTitle = "";
-  $scope.sendCategory;
   $scope.selectedCategory="";
+  var createdCategoryId;
 
    //Logout, unauthorizes the user and logs them back out
     $scope.logout = function(){
@@ -37,21 +36,10 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
     });
 
 
-    //firebase ref for categories
-    var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
-    $scope.allCategories = $firebaseArray(categoriesRef);
-    console.log("scope.allCategories", $scope.allCategories);
-
-    $scope.sendCategory = function() {
-      console.log("$scope.categorytitle", $scope.categoryTitle);
-      $scope.allCategories.$add({
-        userId: authData.uid,
-        title: $scope.categoryTitle   
-      }).then(function(createdcat){
-        var createdCategoryId = createdcat.key();
-        console.log("createdCategoryId", createdCategoryId);
-      }) 
-    }
+  //firebase ref for categories
+  var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
+  $scope.allCategories = $firebaseArray(categoriesRef);
+  
     
 
 }]);

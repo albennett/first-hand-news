@@ -1,7 +1,6 @@
 app.controller("LoginCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseAuth",
   function($scope, $location, $firebaseObject, $firebaseAuth) {
 
-
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
 	$scope.auth = $firebaseAuth(ref);
 
