@@ -11,8 +11,6 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
   var eventCategoryId;
 
   document.querySelector("body").addEventListener("click", function(event) {
-    console.log(event);
-    console.log("event.tar", event.target.id);
     eventCategoryId = event.target.id; 
   });
 
