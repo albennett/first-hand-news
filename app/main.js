@@ -27,6 +27,10 @@ app.config(['$routeProvider',
       when('/story/:story_id', {
         templateUrl: 'partials/storyview.html',
         controller: 'StoryViewCtrl'
+      }).
+      when('/yourstories', {
+        templateUrl: 'partials/yourStories.html',
+        controller: 'YourStoriesCtrl'
       })
       .otherwise({ redirectTo: '/'});
   }]);

@@ -21,4 +21,6 @@
 
 <p>hi story</p>
 
-{{ storiesArray[1].$value }}
+<div ng-repeat="story in yourStoriesArray" class="img-wrap">
+   <p id="{{story.$id}}">{{ story.input }}</p>
+ </div>
