@@ -1,7 +1,6 @@
 app.factory("StorageFactory", ["$firebaseObject", "$firebaseArray",
   function($firebaseObject, $firebaseArray) {
 
-    function StorageFactory($firebaseObject, $firebaseArray) {
 
       return {
         getUserId: function() {
@@ -12,8 +11,10 @@ app.factory("StorageFactory", ["$firebaseObject", "$firebaseArray",
           console.log("userID set to:", id);
         },
         getCategoryId: function(id){
-          var ref = new Firebase("https://first-hand-accounts.firebaseio.com/category/" + id);
+          var ref = new Firebase("https://first-hand-accounts.firebaseio.com/categories/" + id);
+          console.log("ref", ref);
           var specificCategory = $firebaseArray(ref);
+          console.log("specificCategory", specificCategory);
           return specificCategory;
         },
         setCategoryId: function(id){
@@ -21,6 +22,5 @@ app.factory("StorageFactory", ["$firebaseObject", "$firebaseArray",
           console.log("catId set to:", id);
         }
       };
-    } 
   }
 ]);
