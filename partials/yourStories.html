@@ -23,4 +23,5 @@
 
 <div ng-repeat="story in yourStoriesArray" class="img-wrap">
    <p id="{{story.$id}}">{{ story.input }}</p>
+   <button ng-click="yourStoriesArray.$remove(story)">Delete</button>
  </div>
