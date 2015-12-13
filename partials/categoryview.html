@@ -3,5 +3,5 @@
 
 
 <div ng-repeat="story in storiesArray" class="img-wrap">
-   <p>{{ story.input }}</p>
+   <p id="{{story.$id}}"> <a href="#/story/{{story.$id}}">{{ story.input }}</p>
  </div>

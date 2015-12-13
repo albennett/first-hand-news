@@ -23,6 +23,10 @@ app.config(['$routeProvider',
       when('/category/:category_id', {
         templateUrl: 'partials/categoryview.html',
         controller: 'CategoryViewCtrl'
+      }).
+      when('/story/:story_id', {
+        templateUrl: 'partials/storyview.html',
+        controller: 'StoryViewCtrl'
       })
       .otherwise({ redirectTo: '/'});
   }]);
