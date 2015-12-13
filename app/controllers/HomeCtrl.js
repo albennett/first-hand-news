@@ -1,4 +1,4 @@
-app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth", "StorageFactory", "LogoutFactory",
+app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth", "StorageFactory",
   function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth, StorageFactory) {
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
