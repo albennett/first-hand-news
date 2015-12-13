@@ -3,6 +3,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
   var authData = $firebaseAuth(ref).$getAuth();
+  console.log("authdata", authData.uid);
   $scope.selectedCategory = "";
   var createdCategoryId = "";
   var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
@@ -13,6 +14,11 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $scope.categoryTitle = "";
   $scope.storyCreated = {};
   $('#CategoryModal').modal();
+
+  $scope.logout = function(){
+    $firebaseAuth(ref).$unauth();
+    console.log("logged out");
+  };
 
   $scope.Categories = function () {
     if ($scope.categoryTitle === "") {
@@ -35,6 +41,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   }
 
   $scope.Stories = function () {
+    $scope.storyCreated.User = authData.uid;
     $scope.storyCreated.input = $scope.storyInput;
     $scope.allStories.$add($scope.storyCreated);
   }
