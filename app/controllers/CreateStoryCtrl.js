@@ -15,6 +15,8 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $scope.storyCreated = {};
   $('#CategoryModal').modal();
 
+  $scope.title = "Here's a Great Big Title";
+
   $scope.logout = function(){
     $firebaseAuth(ref).$unauth();
     console.log("logged out");
