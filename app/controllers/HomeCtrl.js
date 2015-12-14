@@ -13,6 +13,13 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
     eventCategoryId = event.target.id; 
   });
 
+
+  $scope.userLoggedIn = function(auth) {
+    if (authData)  {
+      return true;
+    }
+  };
+
   StorageFactory.setCategoryId(eventCategoryId);
 
    //Logout, unauthorizes the user and logs them back out

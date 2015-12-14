@@ -20,6 +20,12 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
     console.log("logged out");
   };
 
+  $scope.userLoggedIn = function(auth) {
+    if (authData)  {
+      return true;
+    }
+  };
+
   $scope.Categories = function () {
     if ($scope.categoryTitle === "") {
       $scope.storyCreated.Category = $scope.selectedCategory.$id;

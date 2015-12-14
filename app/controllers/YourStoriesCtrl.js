@@ -3,7 +3,13 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
 
   	var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
   	var authData = $firebaseAuth(ref).$getAuth();
-  	var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories")
+  	var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories");
+
+  	$scope.userLoggedIn = function(auth) {
+    if (authData)  {
+      return true;
+    	}
+  	};
 
   	$scope.logout = function(){
 	    $firebaseAuth(ref).$unauth();

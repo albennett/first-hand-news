@@ -11,19 +11,11 @@
 		    </div>
         	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       			<ul class="nav navbar-nav">
-	              <li><a  id="home">Home</a></li>
-	              <li><a  id="profile">Share your experience</a></li>
+	              <li><a href="#/home" id="home">Home</a></li>
+	              <li ng-show="userLoggedIn()" class="ng-hide"><a href="#/create" id="writestory">Write a Story</a></li>
+	              <li ng-show="userLoggedIn()" class="ng-hide"><a href="#/yourstories" id="yours">Your Stories</a></li>
+	              <li ng-show="userLoggedIn()" class="ng-hide"><a href="#/" id="logout" ng-click="logout()">Log Out</a></li>
             </ul>
           </div> 
       	</div>
 	</nav>
-
-<div class="wrapper">
-<button type="button" id="btn-xl" class="btn btn-primary" ng-click="auth.$authWithOAuthPopup('facebook')">Login With Facebook</button>
-</div>
-
-<div ng-repeat="category in allCategories">
- <div class="img-wrap col-md-3" id="{{category.$id}}">
- 	<h1 id="{{category.$id}}"><a href="#/category/{{category.$id}}">{{category.title}}</a></h1>
- </div>
-</div>

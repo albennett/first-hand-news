@@ -1,5 +1,5 @@
-app.controller("LoginCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseAuth",
-  function($scope, $location, $firebaseObject, $firebaseAuth) {
+app.controller("LoginCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseAuth", "$firebaseArray",
+  function($scope, $location, $firebaseObject, $firebaseAuth, $firebaseArray) {
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
 	$scope.auth = $firebaseAuth(ref);
@@ -19,5 +19,10 @@ app.controller("LoginCtrl", ["$scope", "$location", "$firebaseObject", "$firebas
     if (authData !== null) {
     	$location.path("/home");
     }
+
+    //firebase ref for categories
+  var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
+  $scope.allCategories = $firebaseArray(categoriesRef);
+  console.log("scope.allCategories", $scope.allCategories);
     
 }]);
