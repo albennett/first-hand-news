@@ -16,8 +16,8 @@ app.controller("CategoryViewCtrl", ["$scope", "$location", "$firebaseObject", "$
     $scope.userLoggedIn = function(auth) {
     if (authData)  {
       return true;
-    }
-  };
+    	}
+  	};
 
     console.log("orderByChild", newRef.orderByChild("input"));
     var query = newRef.orderByChild("Category").equalTo(selectCatId);

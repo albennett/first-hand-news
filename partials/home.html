@@ -1,19 +1,5 @@
 <div ng-include="'partials/nav.html'"></div>
 
-<div class="wrapper">
-<button type="button" id="btn-xl" class="btn btn-primary" ng-click="auth.$authWithOAuthPopup('facebook')">Login With Facebook</button>
-</div>
-
-	
-
-<button type="button" class="btn btn-primary btn-lg" data-target="#CategoryModal">
-  Write a story
-</button>
-
-
-
-<button ng-click= "logout()">log out </button>
-
 <div ng-repeat="category in allCategories">
  <div class="img-wrap col-md-3" id="{{category.$id}}">
  	<h1 id="{{category.$id}}"><a href="#/category/{{category.$id}}">{{category.title}}</a></h1>

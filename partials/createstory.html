@@ -1,7 +1,5 @@
 <div ng-include="'partials/nav.html'"></div>
 
-
-
 <!-- Create/Choose category modal -->
 	<div class="modal fade" id="CategoryModal">
 	  <div class="modal-dialog">
@@ -26,6 +24,8 @@
 	</div><!-- /.modal -->
 
 <h1> Hello, write your story</h1>
+<div>
 	<input type="text" id="story" ng-model="storyInput" class="form-control" placeholder="Add your story">
-	<button ng-click="Stories()">Submit</button>
-	<!-- <button ng-click="sendChosenStory()">Submit Chosen</button> -->
+	<button ng-show="userLoggedIn()" ng-click="Stories()">Submit</button>
+	<p ng-show="!userLoggedIn()">Log in to write stories</p>
+</div>	
