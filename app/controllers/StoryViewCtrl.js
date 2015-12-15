@@ -8,8 +8,6 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 	var authData = $firebaseAuth(ref).$getAuth();
 	$scope.voted = false;
 
-	console.log("authdata", authData);
-
 	$scope.logout = function(){
 	  $firebaseAuth(ref).$unauth();
 	  console.log("logged out");
@@ -46,11 +44,17 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 				}
 			});	
 		});
-	};
+	}
+
 
 	$scope.storiesUsersArray.$loaded()
     .then(function() {
 			$scope.incrementVote = function() {
+
+				if (authData === null) {
+					alert("Log In to vote");
+				}
+
 				if ($scope.voted === false){
 					$scope.storiesUsersArray.$add(authData.uid);
 					$scope.voted = true;
@@ -58,11 +62,10 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 					$scope.RateRef.$value++;
           $scope.RateRef.$save();
 				 } else {
-					console.log("cant do it");
+					alert("can only vote once");
 				}
 			}
 		});
      
-      // });
-	
+      	
 }]);
