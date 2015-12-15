@@ -13,6 +13,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $scope.categoryTitle = "";
   $scope.storyCreated = {};
   $('#CategoryModal').modal();
+  $scope.storyTitle = "";
 
   $scope.logout = function(){
     $firebaseAuth(ref).$unauth();
@@ -47,7 +48,9 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
 
   $scope.Stories = function () {
     $scope.storyCreated.User = authData.uid;
+    $scope.storyCreated.name = authData.facebook.displayName;
     $scope.storyCreated.input = $scope.storyInput;
+    $scope.storyCreated.title = $scope.storyTitle;
     $scope.storyCreated.rating = 0;
     $scope.allStories.$add($scope.storyCreated);
   }

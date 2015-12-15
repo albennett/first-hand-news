@@ -8,9 +8,12 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
   var auth;
   $scope.selectedCategory="";
   var createdCategoryId;
-  var eventCategoryId;
+  var eventId;
+  var limitStep = 5;
+  $scope.limit = limitStep;
   document.querySelector("body").addEventListener("click", function(event) {
-    eventCategoryId = event.target.id; 
+    console.log("event", event);
+    eventId = event.target.id; 
   });
 
 
@@ -20,7 +23,7 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
     }
   };
 
-  StorageFactory.setCategoryId(eventCategoryId);
+  StorageFactory.setCategoryId(eventId);
 
    //Logout, unauthorizes the user and logs them back out
     $scope.logout = function(){
@@ -32,7 +35,6 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
   $scope.uidRefData = $firebaseObject(uidRef);
   $scope.uidRefData.$loaded() 
     .then(function(){
-      console.log("scope.uidrefdata", $scope.uidRefData);
   //once uidRefData is loaded, then if there's a value, user is already saved and userExists changes to true
       if ($scope.uidRefData.$value !== null) {
         console.log('user already saved');
@@ -46,6 +48,13 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
           displayName: authData.facebook.displayName
         });
       }
+    });
+
+  var storiesRef = new Firebase ("https://first-hand-accounts.firebaseio.com/stories");
+  $scope.storyRef = $firebaseArray(storiesRef);
+  $scope.storyRef.$loaded()
+    .then(function() {
+      console.log("storyRef", $scope.storyRef);
     });
 
 

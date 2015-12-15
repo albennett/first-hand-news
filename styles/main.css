@@ -1,3 +1,8 @@
 .img-wrap {
 	border: black medium solid;
 }
+
+#listFive {
+	border: black thin solid;
+	float: right;
+}

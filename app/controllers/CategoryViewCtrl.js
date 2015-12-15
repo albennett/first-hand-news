@@ -22,7 +22,5 @@ app.controller("CategoryViewCtrl", ["$scope", "$location", "$firebaseObject", "$
     console.log("orderByChild", newRef.orderByChild("input"));
     var query = newRef.orderByChild("Category").equalTo(selectCatId);
     $scope.storiesArray = $firebaseArray(query);
-	console.log("$routeParams", $routeParams.category_id);
-	console.log("query", query);
 
 }]);

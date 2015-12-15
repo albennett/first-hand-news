@@ -2,6 +2,6 @@
 <h1>{{ selectedCat[0].$value }}</h1>
 
 
-<div ng-repeat="story in storiesArray" class="img-wrap">
+<div ng-repeat="story in storiesArray | orderBy:'-rating'" class="img-wrap">
    <p id="{{story.$id}}"> <a href="#/story/{{story.$id}}">{{ story.input }}</p>
  </div>
