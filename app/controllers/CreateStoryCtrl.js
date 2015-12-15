@@ -2,7 +2,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth) {
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
-  var authData = $firebaseAuth(ref).$getAuth();
+  $scope.authData = $firebaseAuth(ref).$getAuth();
   $scope.selectedCategory = "";
   var createdCategoryId = "";
   var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
@@ -21,7 +21,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   };
 
   $scope.userLoggedIn = function(auth) {
-    if (authData)  {
+    if ($scope.authData)  {
       return true;
     }
   };
@@ -38,7 +38,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $scope.sendCategory = function() {
     console.log("selectedcat", $scope.selectedCategory);
     $scope.allCategories.$add({
-      userId: authData.uid,
+      userId: $scope.authData.uid,
       title: $scope.categoryTitle   
     }).then(function(createdcat){
        createdCategoryId = createdcat.key();
@@ -47,8 +47,8 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   }
 
   $scope.Stories = function () {
-    $scope.storyCreated.User = authData.uid;
-    $scope.storyCreated.name = authData.facebook.displayName;
+    $scope.storyCreated.User = $scope.authData.uid;
+    $scope.storyCreated.name = $scope.authData.facebook.displayName;
     $scope.storyCreated.input = $scope.storyInput;
     $scope.storyCreated.title = $scope.storyTitle;
     $scope.storyCreated.rating = 0;

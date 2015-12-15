@@ -3,22 +3,18 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
   var userExists = false;
-  var authData = $firebaseAuth(ref).$getAuth();
-  console.log("authdata2", authData);
-  var auth;
+  $scope.authData = $firebaseAuth(ref).$getAuth();
   $scope.selectedCategory="";
-  var createdCategoryId;
-  var eventId;
   var limitStep = 5;
   $scope.limit = limitStep;
+  var eventId;
   document.querySelector("body").addEventListener("click", function(event) {
-    console.log("event", event);
     eventId = event.target.id; 
   });
 
 
   $scope.userLoggedIn = function(auth) {
-    if (authData)  {
+    if ($scope.authData)  {
       return true;
     }
   };
@@ -31,7 +27,7 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
       console.log("logged out");
     };
 
-  var uidRef = new Firebase("https://first-hand-accounts.firebaseio.com/users/" + authData.uid);  //places the uidRef into a firebaseobject
+  var uidRef = new Firebase("https://first-hand-accounts.firebaseio.com/users/" + $scope.authData.uid);  //places the uidRef into a firebaseobject
   $scope.uidRefData = $firebaseObject(uidRef);
   $scope.uidRefData.$loaded() 
     .then(function(){
@@ -43,9 +39,9 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
       if (userExists === false) {
         console.log("hello");
         uidRef.set({
-          uid: authData.uid,
-          image: authData.facebook.profileImageURL,
-          displayName: authData.facebook.displayName
+          uid: $scope.authData.uid,
+          image: $scope.authData.facebook.profileImageURL,
+          displayName: $scope.authData.facebook.displayName
         });
       }
     });

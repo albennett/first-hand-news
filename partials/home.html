@@ -9,6 +9,6 @@
 <div id ="listFive">
 <h3>Top 5 stories</h3>
 <div ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
-<p id="{{story.$id}}"><a href="#/story/{{story.$id}}">{{story.title}}</a></p>
+	<p id="{{story.$id}}"><a href="#/story/{{story.$id}}">{{story.title}}</a></p>
 </div>
 </div>

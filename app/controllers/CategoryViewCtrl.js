@@ -7,19 +7,18 @@ app.controller("CategoryViewCtrl", ["$scope", "$location", "$firebaseObject", "$
 	console.log("selectedCat", $scope.selectedCat);
 	var newRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories");
 	var ref = new Firebase("https://first-hand-accounts.firebaseio.com");
-	var authData = $firebaseAuth(ref).$getAuth();
+	$scope.authData = $firebaseAuth(ref).$getAuth();
 	$scope.logout = function(){
       $firebaseAuth(ref).$unauth();
       console.log("logged out");
     };
 
     $scope.userLoggedIn = function(auth) {
-    if (authData)  {
+    if ($scope.authData)  {
       return true;
     	}
   	};
 
-    console.log("orderByChild", newRef.orderByChild("input"));
     var query = newRef.orderByChild("Category").equalTo(selectCatId);
     $scope.storiesArray = $firebaseArray(query);
 

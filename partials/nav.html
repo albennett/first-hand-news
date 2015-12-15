@@ -15,7 +15,7 @@
 	              <li ng-show="userLoggedIn()"><a href="#/home" id="home">Home</a></li>
 	              <li ng-show="!userLoggedIn()"><a href="#/" id="notLoggedInHome">Home</a></li>
 	              <li ng-show="userLoggedIn()" class="ng-hide"><a href="#/create" id="writestory">Write a Story</a></li>
-	              <li ng-show="userLoggedIn()" class="ng-hide"><a href="#/yourstories" id="yours">Your Stories</a></li>
+	              <li ng-show="userLoggedIn()" class="ng-hide"><a href="#/user/{{authData.uid}}" id="yours">Your Stories</a></li>
 	              <li ng-show="userLoggedIn()" class="ng-hide"><a href="#/" id="logout" ng-click="logout()">Log Out</a></li>
             </ul>
           </div> 

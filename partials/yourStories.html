@@ -1,6 +1,7 @@
 <div ng-include="'partials/nav.html'"></div>
 
-<p>hi story</p>
+<h1>Hello, {{authData.facebook.displayName}}</h1>
+<image src="{{authData.facebook.profileImageURL}}"></image>
 
 <div ng-repeat="story in yourStoriesArray" class="img-wrap">
    <p id="{{story.$id}}">{{ story.input }}</p>

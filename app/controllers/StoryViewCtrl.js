@@ -4,7 +4,7 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 	var selectStoryId = $routeParams.story_id;
 	$scope.voted = false;
 	var ref = new Firebase("https://first-hand-accounts.firebaseio.com");
-	var authData = $firebaseAuth(ref).$getAuth();
+	$scope.authData = $firebaseAuth(ref).$getAuth();
 	var newRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId);
 	$scope.storiesArray = $firebaseArray(newRef);
 	var ratingRef = new Firebase ("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId + "/rating");
@@ -18,7 +18,7 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 	};
 
 	$scope.userLoggedIn = function(auth) {
-    if (authData)  {
+    if ($scope.authData)  {
       return true;
     }
   };
@@ -28,7 +28,7 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 		$scope.storiesUsersArray.$loaded()
 		.then(function() {
 			$scope.storiesUsersArray.forEach(function(element) {
-				if (element.$value === authData.uid) {
+				if (element.$value === $scope.authData.uid) {
 					$scope.voted = true;
 				} else {
 					$scope.voted = false;
@@ -41,12 +41,12 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
     .then(function() {
 			$scope.incrementVote = function() {
 //if user is not logged in, then 
-				if (authData === null) {
+				if ($scope.authData === null) {
 					alert("Log In to vote");
 				}
 // if user hasn't voted, then the uid and counter gets added 
 				if ($scope.voted === false){
-					$scope.storiesUsersArray.$add(authData.uid);
+					$scope.storiesUsersArray.$add($scope.authData.uid);
 					$scope.voted = true;
 					console.log("can vote");
 					$scope.RateRef.$loaded()

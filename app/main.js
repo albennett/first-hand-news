@@ -28,7 +28,7 @@ app.config(['$routeProvider',
         templateUrl: 'partials/storyview.html',
         controller: 'StoryViewCtrl'
       }).
-      when('/yourstories', {
+      when('/user/:user_id', {
         templateUrl: 'partials/yourStories.html',
         controller: 'YourStoriesCtrl'
       })
