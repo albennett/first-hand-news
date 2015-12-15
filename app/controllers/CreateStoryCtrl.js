@@ -48,6 +48,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $scope.Stories = function () {
     $scope.storyCreated.User = authData.uid;
     $scope.storyCreated.input = $scope.storyInput;
+    $scope.storyCreated.rating = 0;
     $scope.allStories.$add($scope.storyCreated);
   }
 

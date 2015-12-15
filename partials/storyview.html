@@ -1,3 +1,11 @@
 <div ng-include="'partials/nav.html'"></div>
 
-{{ storiesArray[2].$value }}
+{{ storiesArray[2].$value }}s
+
+<p> helllooo </p>
+
+<div ng-disabled="voted">
+<button ng-click="incrementVote()">Pretend Arrow</button>
+    <p class="count">{{RateRef.$value}}</p>
+</div>
+
