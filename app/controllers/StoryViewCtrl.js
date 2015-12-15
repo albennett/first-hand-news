@@ -2,11 +2,15 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
   function($scope, $location, $firebaseArray, $firebaseAuth, $routeParams, $firebaseObject) {
 	
 	var selectStoryId = $routeParams.story_id;
-	console.log("selectStoryId", selectStoryId);
-	console.log("routeparams", $routeParams);
+	$scope.voted = false;
 	var ref = new Firebase("https://first-hand-accounts.firebaseio.com");
 	var authData = $firebaseAuth(ref).$getAuth();
-	$scope.voted = false;
+	var newRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId);
+	$scope.storiesArray = $firebaseArray(newRef);
+	var ratingRef = new Firebase ("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId + "/rating");
+	$scope.RateRef = $firebaseObject(ratingRef);
+	var userStoryRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId + "/usersRanking")
+  $scope.storiesUsersArray = $firebaseArray(userStoryRef);
 
 	$scope.logout = function(){
 	  $firebaseAuth(ref).$unauth();
@@ -19,20 +23,7 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
     }
   };
 
-	var newRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId);
-
-	var ratingRef = new Firebase ("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId + "/rating");
-
-	$scope.RateRef = $firebaseObject(ratingRef);
-	console.log("ratingRef", $scope.RateRef);
-	$scope.storiesArray = $firebaseArray(newRef);
-	console.log("storiesArray", $scope.storiesArray);
-
-  var userStoryRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId + "/usersRanking")
-  $scope.storiesUsersArray = $firebaseArray(userStoryRef);
-
-  console.log("storiesUsersArray", $scope.storiesUsersArray);
-
+//if there's already an array for users voted, then change vote to true if user's current uid has been previously stored under array 
   if ($scope.storiesUsersArray) {
 		$scope.storiesUsersArray.$loaded()
 		.then(function() {
@@ -46,26 +37,27 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 		});
 	}
 
-
 	$scope.storiesUsersArray.$loaded()
     .then(function() {
 			$scope.incrementVote = function() {
-
+//if user is not logged in, then 
 				if (authData === null) {
 					alert("Log In to vote");
 				}
-
+// if user hasn't voted, then the uid and counter gets added 
 				if ($scope.voted === false){
 					$scope.storiesUsersArray.$add(authData.uid);
 					$scope.voted = true;
 					console.log("can vote");
-					$scope.RateRef.$value++;
-          $scope.RateRef.$save();
-				 } else {
-					alert("can only vote once");
+					$scope.RateRef.$loaded()
+    				.then(function() {
+							$scope.RateRef.$value++;
+		          $scope.RateRef.$save();
+						});
+						 } else {
+							alert("can only vote once");
+						}
 				}
-			}
 		});
-     
-      	
+
 }]);
