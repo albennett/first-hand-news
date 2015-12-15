@@ -24,5 +24,9 @@ app.controller("LoginCtrl", ["$scope", "$location", "$firebaseObject", "$firebas
   var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
   $scope.allCategories = $firebaseArray(categoriesRef);
   console.log("scope.allCategories", $scope.allCategories);
+
+  //firebase ref for stories
+  var storiesRef = new Firebase ("https://first-hand-accounts.firebaseio.com/stories");
+  $scope.storyRef = $firebaseArray(storiesRef);
     
 }]);
