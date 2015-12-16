@@ -13,11 +13,20 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
   	console.log("refuserobject", $scope.refUserObject);
 
   	// $scope.selectedUser = storageFactory.getCategoryId($routeParams.category_id);  
-  	$scope.userLoggedIn = function(auth) {
-    if ($scope.authData)  {
-      return true;
-    	}
-  	};
+ 
+	  	$scope.userLoggedIn = function() {
+	    if ($scope.authData)  {
+	      return true;
+	    	}
+	  	};
+	  	
+	  	if ($scope.authData){
+		  	$scope.canYouDelete = function(){
+			  	if ($scope.authData.uid === userId){
+			  		return true;
+			  	}
+		  	}	
+	  	}
 
   	$scope.logout = function(){
 	    $firebaseAuth(ref).$unauth();
