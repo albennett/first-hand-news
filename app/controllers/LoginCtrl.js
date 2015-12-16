@@ -4,8 +4,7 @@ app.controller("LoginCtrl", ["$scope", "$location", "$firebaseObject", "$firebas
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
 	$scope.auth = $firebaseAuth(ref);
 
-  $scope.auth.$loaded()
-  .then(function(){
+
   	$scope.auth.$onAuth(function(authData) {
   		$scope.authData = authData;
   		if(authData !== null){
@@ -15,17 +14,14 @@ app.controller("LoginCtrl", ["$scope", "$location", "$firebaseObject", "$firebas
   		}
   	});
     
-  })
 
     var authData = ref.getAuth();
     console.log("authData: ", authData);
     //if no login, authenticate with github OAuth
-    authData.$loaded()
-    .then(function(){
+   
       if (authData !== null) {
       	$location.path("/home");
       }
-    })
 
     //firebase ref for categories
   var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");

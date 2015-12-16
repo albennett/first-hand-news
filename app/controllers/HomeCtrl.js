@@ -12,14 +12,11 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
     eventId = event.target.id; 
   });
 
-  $scope.authData.$loaded
-  .then(function(){
     $scope.userLoggedIn = function(auth) {
       if ($scope.authData)  {
         return true;
       }
     };
-  })
 
   StorageFactory.setCategoryId(eventId);
 
