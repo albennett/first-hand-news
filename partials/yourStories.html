@@ -6,7 +6,9 @@
 <p ng-show="signedIn">Your anonymous stories are only shown to you.</p>
 <div ng-repeat="story in yourStoriesArray" ng-show="signedIn" class="img-wrap">
 		<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
-		<p id="{{story.$id}}">{{ story.input }}</p>
+
+		<p id="{{story.$id}}">{{ story.input | limitTo: 150 }} <a href="#/story/{{story.$id}}">Read More</a> </p>
+
 		<button ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
  </div>
 
