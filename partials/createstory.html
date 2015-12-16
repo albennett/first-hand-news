@@ -9,14 +9,17 @@
 	      </div>
 	      <div id="modal-body" class="modal-body">
 	      <input type="text" id="category" ng-model="categoryTitle" class="form-control" placeholder="Add category title">
-	      <button type="button" class="btn btn-primary" ng-click="Categories()" data-dimiss="modal">Submit</button>
-	      <!-- <button type="button" class="btn btn-primary" ng-click="sendChosenCategory()" data-dimiss="modal">Submit chosen</button> -->
+	      
+	      
 	      <select ng-model="selectedCategory" ng-options="category.title for category in allCategories | orderBy:'title'">
 	      	
 	      </select>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      <!-- <button type="button" class="btn btn-primary" data-dimiss="modal" ng-click="Categories()">Submit</button> -->
+	      <button type="button" data-dismiss="modal" id="btn-xl" class="btn btn-primary" ng-click="Categories()">Submit
+			</button>
+	      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        
 	      </div>
 	    </div><!-- /.modal-content -->

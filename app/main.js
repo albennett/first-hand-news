@@ -1,5 +1,5 @@
 var app = angular.module("First-hand-accounts", 
-  ["firebase", "ngRoute", "firebase"]);
+  ["firebase", "ngRoute"]);
 
 app.config(['$routeProvider',
   function($routeProvider) {
@@ -35,12 +35,13 @@ app.config(['$routeProvider',
       .otherwise({ redirectTo: '/'});
   }]);
 
-app.run(function () {
+app.run(function ($location) {
  // Put the onAuth listener in here
  var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
    ref.onAuth(function(authData) {
      if (authData) {
        console.log("Authenticated with uid:", authData.uid);
+       $location.path("#/home");
      } else {
        console.log("Client unauthenticated.")
      }
