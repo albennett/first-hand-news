@@ -23,6 +23,19 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
     }
   };
 
+  $scope.storiesArray.$loaded()
+  .then(function(){
+  	console.log("storiesarray", $scope.storiesArray);
+  	 $scope.theId = $scope.storiesArray[1].$value;
+  	console.log("theId", $scope.theId);
+	  var getImage = new Firebase ("https://first-hand-accounts.firebaseio.com/users/" + $scope.theId);
+	  $scope.userImage = $firebaseArray(getImage);
+	  console.log("scopeimage", $scope.userImage);
+
+  })
+
+
+
 //if there's already an array for users voted, then change vote to true if user's current uid has been previously stored under array 
   if ($scope.storiesUsersArray) {
 		$scope.storiesUsersArray.$loaded()

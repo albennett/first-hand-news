@@ -1,8 +1,8 @@
 <div ng-include="'partials/nav.html'"></div>
-
-{{ storiesArray[2].$value }}s
-
-<p> helllooo </p>
+<h1>{{ storiesArray[5].$value}}</h1>
+<p>{{ storiesArray[2].$value }} </p>
+<p> by : <a href="#/user/{{theId}}"> {{ storiesArray[3].$value }}</a> </p>
+<image src="{{userImage[1].$value}}">
 
 <div ng-disabled="voted">
 <button ng-click="incrementVote()">Pretend Arrow</button>
