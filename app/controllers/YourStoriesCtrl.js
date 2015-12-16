@@ -15,12 +15,11 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
   	console.log("refuserobject", $scope.refUserObject);
 
   	if ($scope.authData) {
-		  		if ($scope.authData.uid === userId){
-			  			$scope.signedIn = true;
-			  	}
-	  		}
+  		if ($scope.authData.uid === userId){
+	  			$scope.signedIn = true;
+	  	}
+		}
 
- 
 	  	$scope.userLoggedIn = function() {
 	    if ($scope.authData)  {
 	      return true;
