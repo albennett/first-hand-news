@@ -3,14 +3,15 @@
 <h1>Hello, {{refUserArray[0].$value}}</h1>
 <image src="{{refUserArray[1].$value}}"></image>
 
-<p>Your anonymous stories are only shown to you.</p>
+<p ng-show="signedIn">Your anonymous stories are only shown to you.</p>
 <div ng-repeat="story in yourStoriesArray" ng-show="signedIn" class="img-wrap">
-		<h2>{{story.title}}</h2>
+		<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
 		<p id="{{story.$id}}">{{ story.input }}</p>
 		<button ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
  </div>
 
 <div ng-repeat="story in yourStoriesArray | filter: !anonymous" class="img-wrap" ng-hide="signedIn">
+		<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
 		<p id="{{story.$id}}">{{ story.input }}</p>
 		<button ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
- </div>
+</div>
