@@ -27,6 +27,10 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
   .then(function(){
   	console.log("storiesarray", $scope.storiesArray);
   	 $scope.theId = $scope.storiesArray[1].$value;
+  	 console.log("id", $scope.storiesArray[6].$value);
+
+  	 $scope.Anonymous = $scope.storiesArray[2].$value;
+
   	console.log("theId", $scope.theId);
 	  var getImage = new Firebase ("https://first-hand-accounts.firebaseio.com/users/" + $scope.theId);
 	  $scope.userImage = $firebaseArray(getImage);
@@ -52,6 +56,7 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 
 	$scope.storiesUsersArray.$loaded()
     .then(function() {
+
 			$scope.incrementVote = function() {
 //if user is not logged in, then 
 				if ($scope.authData === null) {

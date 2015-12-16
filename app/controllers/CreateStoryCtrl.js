@@ -11,9 +11,10 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories")
   $scope.allStories = $firebaseArray(storyRef);
   $scope.categoryTitle = "";
-  $scope.storyCreated = {};
+  storyCreated = {};
   $('#CategoryModal').modal();
   $scope.storyTitle = "";
+  $scope.checkedInput = false;
 
   $scope.logout = function(){
     $firebaseAuth(ref).$unauth();
@@ -28,7 +29,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
 
   $scope.Categories = function () {
     if ($scope.categoryTitle === "") {
-      $scope.storyCreated.Category = $scope.selectedCategory.$id;
+      storyCreated.Category = $scope.selectedCategory.$id;
     } else {
       console.log("created", $scope.categoryTitle);
       $scope.sendCategory();
@@ -42,17 +43,18 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
       title: $scope.categoryTitle   
     }).then(function(createdcat){
        createdCategoryId = createdcat.key();
-       $scope.storyCreated.Category = createdCategoryId;
+       storyCreated.Category = createdCategoryId;
     }) 
   }
 
   $scope.Stories = function () {
-    $scope.storyCreated.User = $scope.authData.uid;
-    $scope.storyCreated.name = $scope.authData.facebook.displayName;
-    $scope.storyCreated.input = $scope.storyInput;
-    $scope.storyCreated.title = $scope.storyTitle;
-    $scope.storyCreated.rating = 0;
-    $scope.allStories.$add($scope.storyCreated);
+    storyCreated.User = $scope.authData.uid;
+    storyCreated.name = $scope.authData.facebook.displayName;
+    storyCreated.input = $scope.storyInput;
+    storyCreated.title = $scope.storyTitle;
+    storyCreated.rating = 0;
+    storyCreated.anonymous = $scope.checkedInput;
+    $scope.allStories.$add(storyCreated);
   }
 
 }]);

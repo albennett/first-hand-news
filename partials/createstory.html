@@ -27,6 +27,7 @@
 <div>
 	<input type="text" id="title" ng-model="storyTitle" class="form-control" placeholder="Title">
 	<input type="text" id="story" ng-model="storyInput" class="form-control" placeholder="Add your story">
+	<input id="checkedAnonymous" ng-model="checkedInput" type="checkbox" name="anonymous" value="anonymous">Be Anonymous<br>
 	<button ng-show="userLoggedIn()" ng-click="Stories()">Submit</button>
 	<p ng-show="!userLoggedIn()">Log in to write stories</p>
 </div>	
