@@ -7,12 +7,19 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
   	console.log("$scope.authData", $scope.authData);
   	var userId = $routeParams.user_id;
   	console.log("userId", userId);
+  	$scope.anonymous = false;
+  	$scope.signedIn = false;
 
   	var refUser = new Firebase("https://first-hand-accounts.firebaseio.com/users/" + userId)
   	$scope.refUserArray = $firebaseArray(refUser);
   	console.log("refuserobject", $scope.refUserObject);
 
-  	// $scope.selectedUser = storageFactory.getCategoryId($routeParams.category_id);  
+  	if ($scope.authData) {
+		  		if ($scope.authData.uid === userId){
+			  			$scope.signedIn = true;
+			  	}
+	  		}
+
  
 	  	$scope.userLoggedIn = function() {
 	    if ($scope.authData)  {
@@ -21,6 +28,12 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
 	  	};
 	  	
 	  	if ($scope.authData){
+	  		$scope.canYouSeeAnonymous = function() {
+	  			if ($scope.authData.uid === userId){
+	  				return true;
+	  			}
+	  		}
+
 		  	$scope.canYouDelete = function(){
 			  	if ($scope.authData.uid === userId){
 			  		return true;
@@ -37,5 +50,19 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
     var query = storyRef.orderByChild("User").equalTo(userId);
     console.log("query", query);
     $scope.yourStoriesArray = $firebaseArray(query);
-    console.log("sjadf", $scope.yourStoriesArray);
+    
+    $scope.yourStoriesArray.$loaded()
+    .then(function(){
+
+    console.log("yourstoriesarrat", $scope.yourStoriesArray);
+	  	$scope.yourStoriesArray.forEach(function(element){
+
+	  		if (element.anonymous === true){
+	  			$scope.anonymous = true;
+	  		}
+	  	});  
+    })
+  	
+
+  		
 }]);
