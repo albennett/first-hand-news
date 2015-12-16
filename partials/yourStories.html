@@ -1,9 +1,9 @@
 <div ng-include="'partials/nav.html'"></div>
 
-<h1>Hello, {{authData.facebook.displayName}}</h1>
-<image src="{{authData.facebook.profileImageURL}}"></image>
+<h1>Hello, {{refUserArray[0].$value}}</h1>
+<image src="{{refUserArray[1].$value}}"></image>
 
 <div ng-repeat="story in yourStoriesArray" class="img-wrap">
    <p id="{{story.$id}}">{{ story.input }}</p>
-   <button ng-click="yourStoriesArray.$remove(story)">Delete</button>
+   <button ng-show="userLoggedIn()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
  </div>

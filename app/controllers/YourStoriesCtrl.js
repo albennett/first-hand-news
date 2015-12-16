@@ -6,8 +6,11 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
   	var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories");
   	console.log("$scope.authData", $scope.authData);
   	var userId = $routeParams.user_id;
+  	console.log("userId", userId);
 
-  	var userRef = new Firebase("https://first-hand-accounts.firebaseio.com/yourstories" + $scope.authData.uid);
+  	var refUser = new Firebase("https://first-hand-accounts.firebaseio.com/users/" + userId)
+  	$scope.refUserArray = $firebaseArray(refUser);
+  	console.log("refuserobject", $scope.refUserObject);
 
   	// $scope.selectedUser = storageFactory.getCategoryId($routeParams.category_id);  
   	$scope.userLoggedIn = function(auth) {
@@ -22,7 +25,8 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
   	};
 
   	console.log("orderByChild", storyRef.orderByChild("input"));
-    var query = storyRef.orderByChild("User").equalTo($scope.authData.uid);
+    var query = storyRef.orderByChild("User").equalTo(userId);
     console.log("query", query);
     $scope.yourStoriesArray = $firebaseArray(query);
+    console.log("sjadf", $scope.yourStoriesArray);
 }]);
