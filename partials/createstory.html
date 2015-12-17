@@ -1,6 +1,6 @@
 <div ng-include="'partials/nav.html'"></div>
 
-<!-- Create/Choose category modal -->
+<!-- Create/Choose category modal -->  
 	<div class="modal fade" id="CategoryModal">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -8,15 +8,12 @@
 	        <h4 class="modal-title">Choose or Create Category</h4>
 	      </div>
 	      <div id="modal-body" class="modal-body">
-	      <input type="text" id="category" ng-model="categoryTitle" class="form-control" placeholder="Add category title">
+	      <input cols="15" rows="10" type="text" id="category" ng-model="categoryTitle" class="form-control" placeholder="Add category title">
 	      
 	      
-	      <select ng-model="selectedCategory" ng-options="category.title for category in allCategories | orderBy:'title'">
-
-	      <div custom-select ng-model="selectedCategory" ng-options="category.title for category in allCategories">
-			</div>
-	      	
+	      <select class="scrollable-menu" ng-model="selectedCategory" ng-options="category.title for category in allCategories | orderBy:'title'">
 	      </select>
+
 	      </div>
 	      <div class="modal-footer">
 	      <!-- <button type="button" class="btn btn-primary" data-dimiss="modal" ng-click="Categories()">Submit</button> -->
@@ -29,11 +26,20 @@
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
-<h1> Hello, write your story</h1>
-<div>
-	<input type="text" id="title" ng-model="storyTitle" class="form-control" placeholder="Title">
-	<input type="text" id="story" ng-model="storyInput" class="form-control" placeholder="Add your story">
-	<input id="checkedAnonymous" ng-model="checkedInput" type="checkbox" name="anonymous" value="anonymous">Be Anonymous<br>
-	<button ng-show="userLoggedIn()" ng-click="Stories()">Submit</button>
-	<p ng-show="!userLoggedIn()">Log in to write stories</p>
-</div>	
+<div class="container">
+
+  <div class="starter-template">
+
+		<h1> Hello, write your story</h1>
+		<div>
+			<input type="text" id="title" ng-model="storyTitle" class="form-control" placeholder="Title">
+			<textarea rows="12" cols="50" ng-model="storyInput" class="form-control" placeholder="Add your story">
+			</textarea>
+			<div class="checkbox">
+			  <label><input id="checkedAnonymous" ng-model="checkedInput" type="checkbox" name="anonymous" value="anonymous" type="checkbox" >Anonymous</label>
+			</div>
+			<button type="button" class="btn btn-secondary btn-lg" ng-show="userLoggedIn()" ng-click="Stories()">Submit</button>
+			<p ng-show="!userLoggedIn()">Log in to write stories</p>
+		</div>	
+	</div>	
+</div>

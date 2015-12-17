@@ -1,4 +1,4 @@
-/*.img-wrap {
+.img-wrap {
 	border: black medium solid;
 }
 
@@ -9,26 +9,37 @@
 
 .categories {
 	margin: 10px;
-	padding: 20px;
-	border: gray medium solid;
+	padding: 40px;
 }
 
-h1 { font-family: 'Metrophobic', Arial, serif; font-weight: 500; }*/
-
-/**/
-
-@font-face{font-family:'Calluna';
- src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/callunasansregular-webfont.woff') format('woff');
+#title {
+	width: 50%;
+	margin-bottom: 30px;
+	margin-top: 15px;
 }
+
+/*#home-image {
+	background-image: url(https://images.unsplash.com/photo-1429729274510-0ca5300305d3?crop=entropy&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375);
+}*/
+
+.scrollable-menu {
+    height: auto;
+    max-height: 10px;
+    overflow-x: hidden;
+}
+
+h1 { font-family: 'Metrophobic', Arial, serif; font-weight: 500; }
+
+/*home page pinterest view*/
+
 body {
-	background: url(//subtlepatterns.com/patterns/scribble_light.png);
   font-family: Calluna, Arial, sans-serif;
   min-height: 1000px;
 }
 #columns {
 	-webkit-column-width: 320px;
 	-webkit-column-gap: 15px;
-  width: 90%;
+  	width: 88%;
 	max-width: 1100px;
 	margin: 50px auto;
 }
@@ -42,7 +53,7 @@ span#columns figure {
 	padding-bottom: 10px;
 	transition: opacity .4s ease-in-out;
   display: inline-block;
-  column-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
 }
 
 span#columns figure img {

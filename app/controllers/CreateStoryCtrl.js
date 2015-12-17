@@ -47,6 +47,9 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
     }) 
   }
 
+var path = "#/user/" + $scope.authData.uid;
+console.log("path", path);
+
   $scope.Stories = function () {
     storyCreated.User = $scope.authData.uid;
     storyCreated.name = $scope.authData.facebook.displayName;
@@ -55,6 +58,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
     storyCreated.rating = 0;
     storyCreated.anonymous = $scope.checkedInput;
     $scope.allStories.$add(storyCreated);
+    $location.path("#/user/" + $scope.authData.uid);
   }
 
 }]);
