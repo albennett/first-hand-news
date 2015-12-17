@@ -1,7 +1,15 @@
 <div ng-include="'partials/nav.html'"></div>
-<h1>{{ selectedCat[0].$value }}</h1>
+
+<div class="container">
+
+  <div class="starter-template">
+		<h1>{{ selectedCat[0].$value }}</h1>
 
 
-<div ng-repeat="story in storiesArray | orderBy:'-rating'" class="img-wrap">
-   <p id="{{story.$id}}"> <a href="#/story/{{story.$id}}">{{ story.input }}</p>
- </div>
+		<div ng-repeat="story in storiesArray | orderBy:'-rating'" class="img-wrap">
+			<p id="{{story.$id}}"> <a href="#/story/{{story.$id}}">{{story.title}}</a></p>
+		   <p id="{{story.$id}}"> {{ story.input | limitTo: 150 }}</p>
+		 </div>
+
+	</div>
+</div>

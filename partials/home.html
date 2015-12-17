@@ -1,14 +1,22 @@
 <div ng-include="'partials/nav.html'"></div>
 
-<div ng-repeat="category in allCategories">
- <div class="img-wrap col-md-3" id="{{category.$id}}">
- 	<h1 id="{{category.$id}}"><a href="#/category/{{category.$id}}">{{category.title}}</a></h1>
- </div>
-</div>
 
-<div id ="listFive">
-<h3>Top 5 stories</h3>
-<div ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
-	<p id="{{story.$id}}"><a href="#/story/{{story.$id}}">{{story.title}}</a></p>
-</div>
-</div>
+<div class="container">
+
+  <div class="starter-template">
+        
+		<div ng-repeat="category in allCategories" id="home-margin">
+			<div class="img-wrap col-md-3" id="{{category.$id}}">
+		 		<h1 id="{{category.$id}}"><a href="#/category/{{category.$id}}">{{category.title}}</a></h1>
+		 	</div>
+		</div>
+
+		<div id ="listFive">
+			<h3>Top 5 stories</h3>
+			<div ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
+			<p id="{{story.$id}}"><a href="#/story/{{story.$id}}">{{story.title}}</a></p>
+			</div>
+		</div>
+  </div>
+
+</div><!-- /.container -->

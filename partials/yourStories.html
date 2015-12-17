@@ -1,19 +1,26 @@
 <div ng-include="'partials/nav.html'"></div>
 
-<h1>Hello, {{refUserArray[0].$value}}</h1>
-<image src="{{refUserArray[1].$value}}"></image>
+<div class="container">
 
-<p ng-show="signedIn">Your anonymous stories are only shown to you.</p>
-<div ng-repeat="story in yourStoriesArray" ng-show="signedIn" class="img-wrap">
-		<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
+  <div class="starter-template">
 
-		<p id="{{story.$id}}">{{ story.input | limitTo: 150 }} <a href="#/story/{{story.$id}}">Read More</a> </p>
+		<h1>Hello, {{refUserArray[0].$value}}</h1>
+		<image src="{{refUserArray[1].$value}}"></image>
 
-		<button ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
- </div>
+		<p ng-show="signedIn">Your anonymous stories are only shown to you.</p>
+		<div ng-repeat="story in yourStoriesArray" ng-show="signedIn" class="img-wrap">
+			<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
 
-<div ng-repeat="story in yourStoriesArray | filter: !anonymous" class="img-wrap" ng-hide="signedIn">
-		<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
-		<p id="{{story.$id}}">{{ story.input }}</p>
-		<button ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
+			<p id="{{story.$id}}">{{ story.input | limitTo: 150 }} <a href="#/story/{{story.$id}}">Read More</a> </p>
+
+			<button ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
+		 </div>
+
+		<div ng-repeat="story in yourStoriesArray | filter: !anonymous" class="img-wrap" ng-hide="signedIn">
+			<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
+			<p id="{{story.$id}}">{{ story.input }}</p>
+			<button ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
+		</div>
+
+	</div>
 </div>

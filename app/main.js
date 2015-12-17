@@ -16,10 +16,6 @@ app.config(['$routeProvider',
         templateUrl: 'partials/createstory.html',
         controller: 'CreateStoryCtrl'
       }).
-      // when('/category', {
-      //   templateUrl: 'partials/categoryview.html',
-      //   controller: 'CategoryViewCtrl'
-      // }).
       when('/category/:category_id', {
         templateUrl: 'partials/categoryview.html',
         controller: 'CategoryViewCtrl'
