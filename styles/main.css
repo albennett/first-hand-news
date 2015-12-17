@@ -1,5 +1,5 @@
 .img-wrap {
-	border: black medium solid;
+	border-bottom: thin black solid;
 }
 
 #listFive {
@@ -7,10 +7,6 @@
 	float: right;
 }
 
-.categories {
-	margin: 10px;
-	padding: 40px;
-}
 
 #title {
 	width: 50%;
@@ -18,17 +14,22 @@
 	margin-top: 15px;
 }
 
-/*#home-image {
-	background-image: url(https://images.unsplash.com/photo-1429729274510-0ca5300305d3?crop=entropy&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375);
-}*/
-
-.scrollable-menu {
-    height: auto;
-    max-height: 10px;
-    overflow-x: hidden;
+.styling-yours{
+	margin: 5px;
+	padding: 15px;
 }
 
-h1 { font-family: 'Metrophobic', Arial, serif; font-weight: 500; }
+.style-profile-top {
+	background-image: url(../images/oldmap.png);
+	height: 300px;
+}
+
+/*#home-image {
+	background-image: url(https://images.unsplash.com/photo-1429729274510-0ca5300305d3?crop=entropy&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375);
+}
+
+
+h1 { font-family: 'Metrophobic', Arial, serif; font-weight: 500; }*/
 
 /*home page pinterest view*/
 
