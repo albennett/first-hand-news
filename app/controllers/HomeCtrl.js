@@ -66,6 +66,4 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
     $scope.allCategories = $firebaseArray(categoriesRef);
     console.log("scope.allCategories", $scope.allCategories);
     
-    
-
 }]);

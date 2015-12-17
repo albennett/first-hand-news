@@ -37,7 +37,7 @@ app.run(function ($location) {
    ref.onAuth(function(authData) {
      if (authData) {
        console.log("Authenticated with uid:", authData.uid);
-       $location.path("#/home");
+       // $location.path("#/home");
      } else {
        console.log("Client unauthenticated.")
      }
