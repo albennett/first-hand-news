@@ -38,6 +38,36 @@
 			<div class="checkbox">
 			  <label><input id="checkedAnonymous" ng-model="checkedInput" type="checkbox" name="anonymous" value="anonymous" type="checkbox" >Anonymous</label>
 			</div>
+  <!-- Images -->
+            <!-- <div class="form-group">
+                <label class="col-md-4 control-label" for="pictures">Add Pictures</label>
+                <div class="col-md-4">
+                    <input id="pictures" type="file" ngf-select ng-model="files"  name="file"    
+                      accept="image/*" ngf-max-size="2MB" ngf-multiple="true" ngf-keep="true" ngf-keep-distinct="true" class="btn btn-primary"/>
+            
+                    <span ng-repeat="file in files">
+                       <img ngf-thumbnail="!file.$error && file" class="thumb"> <button class="btn btn-danger" ng-click="file = null" ng-show="file">Remove</button>
+                    </span>
+                </div>
+            </div> -->
+
+            <h4>Upload on file select</h4>
+
+		    <button ngf-select="uploadFiles($files)" multiple 
+		            accept="image/*">Select Files</button>
+		    <br>
+		    <br>Files:
+		    <ul>
+		        <li ng-repeat="f in files" style="font:smaller">
+		            {{f.name}}
+		        </li>
+		    </ul>
+		    <span class="progress" ng-show="progress >= 0">
+		        <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+		    </span>
+		    {{errorMsg}}
+                <!-- end of images -->
+
 			<button type="button" class="btn btn-secondary btn-lg" ng-show="userLoggedIn()" ng-click="Stories()">Submit</button>
 			<p ng-show="!userLoggedIn()">Log in to write stories</p>
 		</div>	

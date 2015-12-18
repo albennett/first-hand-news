@@ -1,5 +1,5 @@
-app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth",
-  function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth) {
+app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth", "Upload", "$timeout",
+  function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth, Upload, $timeout) {
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
   $scope.authData = $firebaseAuth(ref).$getAuth();
@@ -15,6 +15,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $('#CategoryModal').modal();
   $scope.storyTitle = "";
   $scope.checkedInput = false;
+  $scope.files = [];
 
   $scope.logout = function(){
     $firebaseAuth(ref).$unauth();
@@ -57,8 +58,61 @@ console.log("path", path);
     storyCreated.title = $scope.storyTitle;
     storyCreated.rating = 0;
     storyCreated.anonymous = $scope.checkedInput;
+    // storyCreated.images = $scope.files;
+    $scope.AddPost();
     $scope.allStories.$add(storyCreated);
     $location.path("#/user/" + $scope.authData.uid);
   }
+
+/***** Add data to firebase *****/
+
+    // $scope.AddPost = function(files) { 
+
+    //         // firebaseRef = 'https://first-hand-accounts.firebaseio.com/stories/-K5mT6QY8Za_OoPv3vsk'
+
+    //         // firebaseRef.child('url').set(base64Urls)
+    //         var images = Upload.base64DataUrl(files).then(function(base64Urls){
+    //         $scope.images.push({
+    //             base64Urls,
+
+    //         },function(error) {
+    //             if (error) {
+    //                 console.log("Error:",error);
+    //             } else {
+    //             console.log("Post set successfully!");
+    //             console.log(images);
+    //             $scope.$apply();
+
+    //         }
+
+    //     });
+    //   });
+    // }
+
+    $scope.uploadFiles = function (files) {
+        $scope.files = files;
+        console.log("scope.files", $scope.files);
+        if (files && files.length) {
+            Upload.upload({
+                url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+                data: {
+                    files: files
+                }
+            }).then(function (response) {
+                $timeout(function () {
+                    $scope.result = response.data;
+                });
+            }, function (response) {
+                if (response.status > 0) {
+                    $scope.errorMsg = response.status + ': ' + response.data;
+                }
+            }, function (evt) {
+                $scope.progress = 
+                    Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+            });
+        }
+    };
+
+
 
 }]);

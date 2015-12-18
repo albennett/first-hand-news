@@ -1,5 +1,5 @@
 var app = angular.module("First-hand-accounts", 
-  ["firebase", "ngRoute"]);
+  ["firebase", "ngRoute", 'ngFileUpload']);
 
 app.config(['$routeProvider',
   function($routeProvider) {
