@@ -1,26 +1,64 @@
-<div ng-include="'partials/nav.html'"></div>
+<div class= "navmargin" ng-include="'partials/nav.html'"></div>
 
+<div id="home-image"></div>
+<!-- <div class="container">
 
+  <div class="starter-template"> -->
+<!--  -->
 <div class="container">
+    <div class="row">
+        
+            
+            <!--/sidebar-nav-fixed -->
+        </div>
+        <!--/span-->
+        <div class="col-md-8">
+            <div class="">
+                 <!-- <h1>Hello, world!</h1> -->
 
-  <div class="starter-template">
+                 	<div ng-repeat="category in allCategories">
+									 <div class="img-wrap col-md-3 categories" id="{{category.$id}}">
+									 	<h1 class="font-cat" id="{{category.$id}}"><a href="#/category/{{category.$id}}">{{category.title}}</a></h1>
+									 </div>
+									</div>
 
-		<div ng-repeat="category in allCategories">
-		 <div class="img-wrap col-md-3 categories" id="{{category.$id}}">
-		 	<h1 id="{{category.$id}}"><a href="#/category/{{category.$id}}">{{category.title}}</a></h1>
-		 </div>
-		</div>
+               <!--  <p>This is a template for a simple marketing or informational website. It
+                    includes a large callout called the hero unit and three supporting pieces
+                    of content. Use it as a starting point to create something more unique.</p>
+                <p><a class="btn btn-primary btn-lg">Learn more »</a>
+                </p> -->
+            </div>
+           
+        </div>
+        <!--/span-->
+        <div class="col-md-4">
+          <div class="sidebar-nav-fixed pull-right">
+            <div class="well">
+              <ul class="nav">
+                <h3>Top 5 stories</h3>
+									<div ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
+										<p id="{{story.$id}}" class="top5-story"><a href="#/story/{{story.$id}}">{{story.title}}</a></p>    
+              </ul>
+            </div>
+            <!--/.well -->
+          </div>
+            <!--/sidebar-nav-fixed -->
+       </div>
+        <!--/span-->
+    </div>
+    <!--/row-->
 
-		<div id ="listFive">
-		<h3>Top 5 stories</h3>
-		<div ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
-			<p id="{{story.$id}}"><a href="#/story/{{story.$id}}">{{story.title}}</a></p>
-		</div>
-		</div>
+
+
+  <!--  -->
+
+	
         
 	 </div>
 
-</div> <!-- /.container
+</div> 
+</div>
+</ul>
 
 
 

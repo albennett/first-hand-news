@@ -1,3 +1,35 @@
+#home-image {
+	background-image: url(../images/indianwomen.png);
+ 	background-size: 100%;
+ 	background-repeat: no-repeat;
+ 	height: 500px;
+ 	margin: 0;
+ 	float: center;
+}
+
+.sidebar-nav-fixed{
+	z-index: -20;
+	position: fixed;
+	top: 60px;
+}
+
+.wrapper-nav{
+	margin-top: 50px;
+}
+
+.navbar {
+	margin-bottom: 500px;
+}
+
+.font-cat {
+	font-family: Verdana;
+}
+
+body {
+	background-color: #eee;
+}
+
+
 .img-wrap {
 	border-bottom: thin black solid;
 }
@@ -5,6 +37,20 @@
 #listFive {
 	border: black thin solid;
 	float: right;
+	width: 25%;
+	font-size: 1.2em;
+	padding: 10px;
+}
+
+
+.sidebar-nav-fixed {
+	width:20%;
+}
+
+
+.top5-story{
+	text-align: center;
+	display: inline-block;
 }
 
 
@@ -25,7 +71,7 @@
 }
 
 .categories {
-	width: 300px;
+	width: 335px;
 	height: 250px;
 	background: #fefefe;
 	border: 2px solid #fcfcfc;
