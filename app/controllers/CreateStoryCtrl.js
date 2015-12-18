@@ -61,4 +61,8 @@ console.log("path", path);
     $location.path("#/user/" + $scope.authData.uid);
   }
 
+  $('.dropdown-menu').find('input').click(function (e) {
+    e.stopPropagation();
+  });
+
 }]);

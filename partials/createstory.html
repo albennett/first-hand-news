@@ -5,20 +5,34 @@
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h4 class="modal-title">Choose or Create Category</h4>
 	      </div>
 	      <div id="modal-body" class="modal-body">
-	      <input cols="15" rows="10" type="text" id="category" ng-model="categoryTitle" class="form-control" placeholder="Add category title">
-	      
-	      
-	      <select class="scrollable-menu" ng-model="selectedCategory" ng-options="category.title for category in allCategories | orderBy:'title'">
-	      </select>
-
+	      <h3> Choose an existing category</h3>
+	      <!-- new search dropdown -->
+	      <div class="dropdown dropdown-scroll">
+	      <button class="btn btn-default dropdown-toggle search-spacing" type="button" id="dropdownMenu1" data-toggle="dropdown">Search Categories <span class="caret"></span>
+		    </button>
+		    <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+	        <!-- <li role="presentation"> -->
+            <div class="input-group input-group-sm search-control">
+            	<span class="input-group-addon">
+                  <span class="glyphicon glyphicon-search"></span>
+            	</span>
+                <input type="text" class="form-control" placeholder="Search Categories" ng-model="query"></input>
+            </div>
+	        <!-- </li> -->
+	        <select size="10" ng-model="selectedCategory" placeholder="Add category title" ng-options="category.title for category in allCategories | orderBy:'title' | filter:query">{{category.title}} </a>
+	        </select>
+		    </div>
+		    </div>
+		    <p>{{selectedCategory.title}}</p>
+		    <h3>Or create a new category </h3>
+					<!--Create a new category-->
+		    <input cols="15" rows="10" type="text" id="category" ng-model="categoryTitle" class="form-control" placeholder="Add category title">
+	      <!-- end search dropdown -->
 	      </div>
 	      <div class="modal-footer">
-	      <!-- <button type="button" class="btn btn-primary" data-dimiss="modal" ng-click="Categories()">Submit</button> -->
-	      <button type="button" data-dismiss="modal" id="btn-xl" class="btn btn-primary" ng-click="Categories()">Submit
-			</button>
+	      <button type="button" data-dismiss="modal" id="btn-xl" class="btn btn-primary" ng-click="Categories()">Submit</button>
 	      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        
 	      </div>

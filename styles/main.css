@@ -34,4 +34,17 @@
 	padding: 15px;
 	padding-bottom: 10px;
 	transition: opacity .4s ease-in-out;
-}s
+}
+/*For categories drop down in modal*/
+.dropdown.dropdown-scroll .dropdown-menu {
+    max-height: 200px;
+    width: 400px;
+    overflow: auto;
+}
+.search-control {
+    padding: 5px 10px;
+}
+
+.search-spacing {
+	margin-bottom: 30px;
+}
