@@ -24,70 +24,14 @@
 	height: 300px;
 }
 
-/*#home-image {
-	background-image: url(https://images.unsplash.com/photo-1429729274510-0ca5300305d3?crop=entropy&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375);
-}
-
-
-h1 { font-family: 'Metrophobic', Arial, serif; font-weight: 500; }*/
-
-/*home page pinterest view*/
-
-body {
-  font-family: Calluna, Arial, sans-serif;
-  min-height: 1000px;
-}
-#columns {
-	-webkit-column-width: 320px;
-	-webkit-column-gap: 15px;
-  	width: 88%;
-	max-width: 1100px;
-	margin: 50px auto;
-}
-
-span#columns figure {
+.categories {
+	width: 300px;
+	height: 250px;
 	background: #fefefe;
 	border: 2px solid #fcfcfc;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-	margin: 0 2px 15px;
+	margin: 10px;
 	padding: 15px;
 	padding-bottom: 10px;
 	transition: opacity .4s ease-in-out;
-  display: inline-block;
-  -webkit-column-break-inside: avoid;
-}
-
-span#columns figure img {
-	width: 100%; height: auto;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 15px;
-	margin-bottom: 5px;
-}
-
-span#columns figure figcaption {
-  font-size: .9rem;
-	color: #444;
-  line-height: 1.5;
-}
-
-span#columns small { 
-  font-size: 1rem;
-  float: right; 
-  text-transform: uppercase;
-  color: #aaa;
-} 
-
-span#columns small a { 
-  color: #666; 
-  text-decoration: none; 
-  transition: .4s color;
-}
-
-span#columns:hover figure:not(:hover) {
-	opacity: 0.4;
-}
-
-@media screen and (max-width: 750px) { 
-  #columns { column-gap: 0px; }
-  #columns figure { width: 100%; }
-}
+}s
