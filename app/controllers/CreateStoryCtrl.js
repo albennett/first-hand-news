@@ -16,6 +16,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $scope.storyTitle = "";
   $scope.checkedInput = false;
 
+
   $scope.logout = function(){
     $firebaseAuth(ref).$unauth();
     console.log("logged out");
@@ -56,5 +57,12 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
     storyCreated.anonymous = $scope.checkedInput;
     $scope.allStories.$add(storyCreated);
   }
+
+  // jQuery
+$('.dropdown-menu').find('input').click(function (e) {
+    e.stopPropagation();
+});
+
+console.log("selectedCategory", $scope.selectedCategory);
 
 }]);
