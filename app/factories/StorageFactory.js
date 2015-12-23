@@ -12,9 +12,7 @@ app.factory("StorageFactory", ["$firebaseObject", "$firebaseArray",
         },
         getCategoryId: function(id){
           var ref = new Firebase("https://first-hand-accounts.firebaseio.com/categories/" + id);
-          console.log("ref", ref);
           var specificCategory = $firebaseArray(ref);
-          console.log("specificCategory", specificCategory);
           return specificCategory;
         },
         setCategoryId: function(id){

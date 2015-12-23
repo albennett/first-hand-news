@@ -1,16 +1,63 @@
-#home-image {
-	background-image: url(../images/indianwomen.png);
- 	background-size: 100%;
- 	background-repeat: no-repeat;
- 	height: 500px;
- 	margin: 0;
- 	float: center;
+body {
+	background-color: white;
+}
+/*
+a{
+	color: #191919;
+	background-color: #FFF056 ;
+}*/
+
+.banksy{
+	display: inline-block;
+	float: right;
 }
 
-.sidebar-nav-fixed{
-	z-index: -20;
-	position: fixed;
-	top: 60px;
+.top5-story{
+	background-color: white;
+	font-size: 1.3em;
+}
+
+.navbar {
+	background-color: #FFF056;
+}
+/*Home View*/
+#home-image {
+	/*background-image: url(../images/girlportrait.jpg);*/
+ 	/*background-size: 100%;*/
+ 	/*background-repeat: no-repeat;*/
+ 	/*height: 500px;*/
+ 	width: 100%;
+ 	margin: 0;
+}
+
+.center-cat{
+	margin: auto;
+}
+
+.fix-it{
+	width: 80%;
+	text-align: center;
+	margin: auto;
+}
+
+.categories-color{
+	color: #191919;
+	background-color: #FFF056 ;
+}
+
+.story-padding{
+	padding: 25px;
+	color: #191919;
+	/*background-color: #FFF056;
+	margin: 30px;*/
+}
+
+#explaining-div{
+	background-color: #191919;
+	color: white;
+	font-size: 2.3em;
+	width: 100%;
+	text-align: center;
 }
 
 .wrapper-nav{
@@ -25,41 +72,32 @@
 	font-family: Verdana;
 }
 
-body {
-	background-color: #eee;
-}
 
 
 .img-wrap {
 	border-bottom: thin black solid;
 }
 
-#listFive {
-	border: black thin solid;
-	float: right;
-	width: 25%;
-	font-size: 1.2em;
-	padding: 10px;
+
+.categories {
+	width: 340px;
+	height: 250px;
+	background: #fefefe;
+	border: 2px solid #fcfcfc;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin: 10px;
+	padding: 15px;
+	padding-bottom: 10px;
+	transition: opacity .4s ease-in-out;
 }
-
-
-.sidebar-nav-fixed {
-	width:20%;
-}
-
-
-.top5-story{
-	text-align: center;
-	display: inline-block;
-}
-
-
+	
 #title {
 	width: 50%;
 	margin-bottom: 30px;
 	margin-top: 15px;
 }
 
+/*Profil page*/
 .styling-yours{
 	margin: 5px;
 	padding: 15px;
@@ -70,17 +108,11 @@ body {
 	height: 300px;
 }
 
-.categories {
-	width: 335px;
-	height: 250px;
-	background: #fefefe;
-	border: 2px solid #fcfcfc;
-	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-	margin: 10px;
-	padding: 15px;
-	padding-bottom: 10px;
-	transition: opacity .4s ease-in-out;
+.page-header{
+	font-size: 2em;
 }
+
+
 /*For categories drop down in modal*/
 .dropdown.dropdown-scroll .dropdown-menu {
     max-height: 200px;

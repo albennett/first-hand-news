@@ -1,11 +1,10 @@
 <div class="navmargin" ng-include="'partials/nav.html'"></div>
 
 <div class="container">
-
+<!-- category title -->
   <div class="starter-template">
 		<h1>{{ selectedCat[0].$value }}</h1>
-
-
+<!-- each story associated to the category, order by highest rated -->
 		<div ng-repeat="story in storiesArray | orderBy:'-rating'" class="img-wrap">
 			<p id="{{story.$id}}"> <a href="#/story/{{story.$id}}">{{story.title}}</a></p>
 		   <p id="{{story.$id}}"> {{ story.input | limitTo: 150 }}</p>

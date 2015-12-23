@@ -20,21 +20,20 @@
             	</span>
                 <input type="text" class="form-control" placeholder="Search Categories" ng-model="query"></input>
             </div>
-	        <!-- </li> -->
+	       <!-- options in dropdown -->
 	        <select size="10" ng-model="selectedCategory" placeholder="Add category title" ng-options="category.title for category in allCategories | orderBy:'title' | filter:query">{{category.title}} </a>
 	        </select>
 		    </div>
 		    </div>
 		    <p>{{selectedCategory.title}}</p>
 		    <h3>Or create a new category </h3>
+	      <!-- end search dropdown -->
 					<!--Create a new category-->
 		    <input cols="15" rows="10" type="text" id="category" ng-model="categoryTitle" class="form-control" placeholder="Add category title">
-	      <!-- end search dropdown -->
 	      </div>
 	      <div class="modal-footer">
 	      <button type="button" data-dismiss="modal" id="btn-xl" class="btn btn-primary" ng-click="Categories()">Submit</button>
-	      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        
+	      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
 	      </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
@@ -43,16 +42,22 @@
 <div class="container">
 
   <div class="starter-template">
-
+<!-- content on page, not modal -->
 		<h1> Hello, write your story</h1>
+		<!-- add your own story -->
 		<div>
 			<input type="text" id="title" ng-model="storyTitle" class="form-control" placeholder="Title">
 			<textarea rows="12" cols="50" ng-model="storyInput" class="form-control" placeholder="Add your story">
 			</textarea>
+			<!-- checkbox input -->
 			<div class="checkbox">
 			  <label><input id="checkedAnonymous" ng-model="checkedInput" type="checkbox" name="anonymous" value="anonymous" type="checkbox" >Anonymous</label>
 			</div>
+			<!-- add image -->
+			<div>Add an image from the web: <input type="text" ng-model="imageInput" placeholder="Image url"></div>
+			<!-- submit button -->
 			<button type="button" class="btn btn-secondary btn-lg" ng-show="userLoggedIn()" ng-click="Stories()">Submit</button>
+			<!-- only shows if not logged in -->
 			<p ng-show="!userLoggedIn()">Log in to write stories</p>
 		</div>	
 	</div>	

@@ -3,15 +3,17 @@
 <div class="container">
 
   <div class="starter-template">
-
+<!-- Title and image of story -->
 		<h1>{{ storiesArray[6].$value}}</h1>
 		<p>{{ storiesArray[3].$value }} </p>
 		<div ng-hide="">
+		<!-- hide author & image if marked as anonymous -->
 		<p ng-hide="Anonymous"> by : <a href="#/user/{{theId}}"> {{ storiesArray[4].$value }}</a> </p>
+		<!-- <image src="{{storiesArray[].$value}}"></image> -->
 		<p ng-show="Anonymous"> By: Anonymous </p>
 		<image ng-hide="Anonymous" src="{{userImage[1].$value}}"></image>
 		</div>
-
+<!-- disabled voting if voted is true -->
 		<div ng-disabled="voted">
 		<button ng-click="incrementVote()">Pretend Arrow</button>
 		    <p class="count">{{RateRef.$value}}</p>

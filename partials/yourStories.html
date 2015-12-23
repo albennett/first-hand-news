@@ -1,24 +1,34 @@
+<!-- nav partial -->
 <div class="navmargin" ng-include="'partials/nav.html'"></div>
+<img class="banksy" src="../images/banksykindness.jpg">
+<!-- name -->
 
-  <div class="style-profile-top">
-		<h1>Hello, {{refUserArray[0].$value}}</h1>
-		<image class="img-circle" src="{{refUserArray[1].$value}}"></image>
-	</div>
+
 <div class="container">
-
+<!-- only shows if it's own user's profile  - div is only shown if it's own user's profile -->
   <div class="starter-template">
-		<p ng-show="signedIn">Your anonymous stories are only shown to you.</p>
-		<div ng-repeat="story in yourStoriesArray" ng-show="signedIn" class="img-wrap col-md-5 styling-yours" >
-			<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
+      <div class="page-header text-muted">
+        {{refUserArray[0].$value}} : Stories
 
+      </div> 
+
+    <div align="center">
+    	 <a href="#" class="pull-right"><img src="{{refUserArray[1].$value}}" class="img-circle"></a>
+    </div>
+		<p ng-show="signedIn">Your anonymous stories are only shown to you.</p>
+		<!-- each story repeat -->
+		
+		<div ng-repeat="story in yourStoriesArray" ng-show="signedIn" class="img-wrap col-md-5 styling-yours" >
+		<!-- title of story -->
+			<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
+			<!-- input of story -->
 			<p id="{{story.$id}}">{{ story.input | limitTo: 150 }} <a href="#/story/{{story.$id}}">Read More</a> </p>
 			<button type="button" class="btn btn-secondary btn-md" ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
 		 </div>
-
+<!-- different ng-repeat if not own profile -->
 		<div ng-repeat="story in yourStoriesArray | filter: !anonymous" class="img-wrap" ng-hide="signedIn">
 			<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
 			<p id="{{story.$id}}">{{ story.input }}</p>
-			<button ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
 		</div>
 
 	</div>

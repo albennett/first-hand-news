@@ -1,65 +1,49 @@
 <div class= "navmargin" ng-include="'partials/nav.html'"></div>
+  <div class="row">
 
-<div id="home-image"></div>
-<!-- <div class="container">
+<div >
+  <img id="home-image" src="../images/girlportrait-edited.jpg">
+</div>
+<div id="explaining-div">First-hand News:  knausgaard selvage kale chips green juice disrupt asymmetrical kickstarter yr. Bitters hella XOXO, 90's YOLO quinoa gastropub craft beer keytar bespoke farm-to-table squid fashion axe cornhole. 
+<br>Meditation forage kinfolk, offal lomo twee pour-over taxidermy celiac single-origin coffee selvage cliche squid butcher. Sartorial leggings beforamps meditation disrupt. Everyday carry next level f </div>
 
-  <div class="starter-template"> -->
-<!--  -->
-<div class="container">
-    <div class="row">
+<div id="wrap" class="fix-it"> 
+  <h3>Top Stories</h3>
+  <span ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
+    <span id="{{story.$id}}" class="top5-story"><a class="story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></span>
+</div>
+<div class="container center-cat">
+
+  <div class="starter-template">
+
         
-            
+    <!-- <div class="col-md-12 center-cat"> -->
+    <!-- all categories listed on home page -->
+        <div ng-repeat="category in allCategories">
+          <div class="img-wrap col-md-3 categories" id="{{category.$id}}">
+            <h1 class="font-cat" id="{{category.$id}}"><a class="categories-color" href="#/category/{{category.$id}}">{{category.title}}</a></h1>
+          </div>
+        </div>
+
+        
             <!--/sidebar-nav-fixed -->
-        </div>
-        <!--/span-->
-        <div class="col-md-8">
-            <div class="">
-                 <!-- <h1>Hello, world!</h1> -->
-
-                 	<div ng-repeat="category in allCategories">
-									 <div class="img-wrap col-md-3 categories" id="{{category.$id}}">
-									 	<h1 class="font-cat" id="{{category.$id}}"><a href="#/category/{{category.$id}}">{{category.title}}</a></h1>
-									 </div>
-									</div>
-
-               <!--  <p>This is a template for a simple marketing or informational website. It
-                    includes a large callout called the hero unit and three supporting pieces
-                    of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-lg">Learn more »</a>
-                </p> -->
-            </div>
-           
-        </div>
-        <!--/span-->
-        <div class="col-md-4">
+       <!--  <div class="col-md-4">
           <div class="sidebar-nav-fixed pull-right">
             <div class="well">
               <ul class="nav">
                 <h3>Top 5 stories</h3>
 									<div ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
 										<p id="{{story.$id}}" class="top5-story"><a href="#/story/{{story.$id}}">{{story.title}}</a></p>    
+            			</div>
               </ul>
-            </div>
-            <!--/.well -->
-          </div>
+            <!/.well -->
+          <!-- </div> -->
             <!--/sidebar-nav-fixed -->
-       </div>
+       <!-- </div> -->
         <!--/span-->
-    </div>
+    <!-- </div> --> 
     <!--/row-->
 
-
-
-  <!--  -->
-
-	
-        
 	 </div>
 
 </div> 
-</div>
-</ul>
-
-
-
-

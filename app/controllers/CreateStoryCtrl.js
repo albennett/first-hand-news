@@ -2,19 +2,20 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth) {
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
+  var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories")
+  $scope.allStories = $firebaseArray(storyRef);
+  var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
+  $scope.allCategories = $firebaseArray(categoriesRef);
   $scope.authData = $firebaseAuth(ref).$getAuth();
   $scope.selectedCategory = "";
   var createdCategoryId = "";
-  var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
-  $scope.allCategories = $firebaseArray(categoriesRef);
-  console.log("scope.allCategories", $scope.allCategories);
-  var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories")
-  $scope.allStories = $firebaseArray(storyRef);
   $scope.categoryTitle = "";
-  storyCreated = {};
-  $('#CategoryModal').modal();
   $scope.storyTitle = "";
+  $scope.imageInput = "";
+  storyCreated = {};
   $scope.checkedInput = false;
+  $('#CategoryModal').modal();
+
 
   $scope.logout = function(){
     $firebaseAuth(ref).$unauth();
@@ -26,30 +27,32 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
       return true;
     }
   };
-
+//if user doesn't create category, then category is stored from the dropdown categories
   $scope.Categories = function () {
     if ($scope.categoryTitle === "") {
       storyCreated.Category = $scope.selectedCategory.$id;
-    } else {
+    } else { //if category is created, then run sendCategory function
       console.log("created", $scope.categoryTitle);
       $scope.sendCategory();
     }
   }
 
   $scope.sendCategory = function() {
-    console.log("selectedcat", $scope.selectedCategory);
+    //add the category to categories in firebase
     $scope.allCategories.$add({
       userId: $scope.authData.uid,
       title: $scope.categoryTitle   
     }).then(function(createdcat){
        createdCategoryId = createdcat.key();
+       //stores the new category id in storyCreated
        storyCreated.Category = createdCategoryId;
     }) 
   }
 
-var path = "#/user/" + $scope.authData.uid;
-console.log("path", path);
+// var path = "#/user/" + $scope.authData.uid;
+// console.log("path", path);
 
+//stores story information when you click submit on create view
   $scope.Stories = function () {
     storyCreated.User = $scope.authData.uid;
     storyCreated.name = $scope.authData.facebook.displayName;
@@ -57,10 +60,11 @@ console.log("path", path);
     storyCreated.title = $scope.storyTitle;
     storyCreated.rating = 0;
     storyCreated.anonymous = $scope.checkedInput;
+    storyCreated.image = $scope.imageInput;
     $scope.allStories.$add(storyCreated);
-    $location.path("#/user/" + $scope.authData.uid);
+    // $location.path("#/user/" + $scope.authData.uid);
   }
-
+//code for drop down
   $('.dropdown-menu').find('input').click(function (e) {
     e.stopPropagation();
   });
