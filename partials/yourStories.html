@@ -9,24 +9,23 @@
   <div class="starter-template">
       <div class="page-header text-muted">
         {{refUserArray[0].$value}} : Stories
-
+    	 <img src="{{refUserArray[1].$value}}" class="img-circle">
       </div> 
 
-    <div align="center">
-    	 <a href="#" class="pull-right"><img src="{{refUserArray[1].$value}}" class="img-circle"></a>
-    </div>
+   
+    
 		<p ng-show="signedIn">Your anonymous stories are only shown to you.</p>
 		<!-- each story repeat -->
-		
-		<div ng-repeat="story in yourStoriesArray" ng-show="signedIn" class="img-wrap col-md-5 styling-yours" >
+		<div class="row">    
+		<div class="col-sm-8 page-header" ng-repeat="story in yourStoriesArray" ng-show="signedIn" class="img-wrap col-md-5 styling-yours" >
 		<!-- title of story -->
-			<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
+			<h2><a class="story-title" href="#/story/{{story.$id}}">{{story.title}}</a></h2>
 			<!-- input of story -->
 			<p id="{{story.$id}}">{{ story.input | limitTo: 150 }} <a href="#/story/{{story.$id}}">Read More</a> </p>
 			<button type="button" class="btn btn-secondary btn-md" ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
 		 </div>
 <!-- different ng-repeat if not own profile -->
-		<div ng-repeat="story in yourStoriesArray | filter: !anonymous" class="img-wrap" ng-hide="signedIn">
+		<div ng-repeat="story in yourStoriesArray | filter: !anonymous" class="img-wrap" ng-hide="signedIn"  class="col-sm-8 page-header">
 			<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
 			<p id="{{story.$id}}">{{ story.input }}</p>
 		</div>

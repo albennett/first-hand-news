@@ -103,6 +103,19 @@ a{
 	padding: 15px;
 }
 
+.img-circle{
+	margin-left: 20px;
+	width: 10%;
+}
+
+.story-title{
+	color: #191919;
+}
+
+.page-header p{
+	font-size: .6em;
+}
+
 .style-profile-top {
 	background-image: url(../images/oldmap.png);
 	height: 300px;
@@ -112,6 +125,31 @@ a{
 	font-size: 2em;
 }
 
+/*category view*/
+
+.world-map-cat{
+	background-image: url(../images/world-map.png);
+	background-blend-mode: lighten;
+	height: 500px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.margin-cat-title{
+	margin-top: 30px;
+}
+
+.cat-story-title{
+	font-size: 1.5em;
+}
+
+.margin-cat-story{
+	margin-top: 40px;
+	background-color: lightgray;
+	opacity: 0.3;
+	color: black;
+}
 
 /*For categories drop down in modal*/
 .dropdown.dropdown-scroll .dropdown-menu {
