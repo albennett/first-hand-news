@@ -38,11 +38,13 @@ a{
 	width: 80%;
 	text-align: center;
 	margin: auto;
+	margin-bottom: 30px;
+	margin-top: 10px;
 }
 
 .categories-color{
-	color: #191919;
-	background-color: #FFF056 ;
+	color: black;
+	
 }
 
 .story-padding{
@@ -53,10 +55,11 @@ a{
 }
 
 #explaining-div{
-	background-color: #191919;
+	background: rgba(0,0,0, 0.3);
 	color: white;
 	font-size: 2.3em;
-	width: 100%;
+	width: 80%;
+	margin: auto;
 	text-align: center;
 }
 
