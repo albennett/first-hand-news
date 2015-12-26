@@ -32,14 +32,13 @@ Meditation forage kinfolk, offal lomo twee pour-over taxidermy celiac single-ori
   <div class="starter-template">
     <div class="row">
       <div class="col-sm-4 line col-md-offset-2" id="left-home" ng-show="userLoggedIn()">
-
-        <!-- <div class="box">
+        <!-- <input type=search results=5 placeholder=Search... name=s> -->
           <div class="container-1">
               <span class="icon"><i class="fa fa-search"></i></span>
-              <input type="search" id="search" placeholder="Search Category" />
-          </div> -->
+              <input ng-model="query" type="search" class="search rounded" id="search" placeholder="Search Categories" />
+          </div>
 
-          <div id="left" class="categories" ng-repeat="category in allCategories">
+          <div id="left" class="categories" ng-repeat="category in allCategories |filter: query">
             <div class="" id="{{category.$id}}">
               <h2 class="font-cat" id="{{category.$id}}"><a class="categories-color" href="#/category/{{category.$id}}">{{category.title}}</a></h2>
             </div>

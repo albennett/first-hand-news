@@ -20,6 +20,7 @@ a{
 	background-color: #FFF056;
 }
 /*Home View*/
+
 #home-image {
 	/*background-image: url(../images/girlportrait.jpg);*/
  	/*background-size: 100%;*/
@@ -27,6 +28,33 @@ a{
  	/*height: 500px;*/
  	width: 100%;
  	margin: 0;
+}
+
+/*search input*/
+
+form{
+	width:500px;
+	margin:0 auto;
+}
+.search { 
+	padding:6px 15px 6px 30px;
+	margin:3px; 
+	background: url('./images/search.png') no-repeat 8px 6px; 
+}
+
+.rounded { 
+	border-radius:15px; 
+	-moz-border-radius:15px; 
+	-webkit-border-radius:15px; 
+}
+
+input[type=text]{
+	color:#bcbcbc;
+}
+
+.lighter input[type=text]{
+	border:1px solid #d0d0d0;
+	background-color:#fcfcfc;
 }
 
 .center-cat{
@@ -102,6 +130,10 @@ a{
 
 /*logged in home*/
 
+.container-1{
+	margin-top: 50px;
+}
+
 .story-author{
 	border-bottom: thin gray solid;
 	padding-bottom: 30px;
@@ -147,7 +179,7 @@ a{
   }
   
 #left{
-	margin-left: 70px;
+	margin: 0 auto;
 	margin-top: 60px;
 }
 
@@ -183,6 +215,8 @@ a{
   margin-top: 85px;
   margin:10px; 
   padding:10px;
+  margin-right: 70px;
+  margin-left: 30px;
 }
 
 

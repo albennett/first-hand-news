@@ -43,7 +43,7 @@
 
   <div class="starter-template">
 <!-- content on page, not modal -->
-		<h1> Hello, write your story</h1>
+		<h1> Share your experience</h1>
 		<!-- add your own story -->
 		<div>
 			<input type="text" id="title" ng-model="storyTitle" class="form-control" placeholder="Title">
@@ -54,7 +54,7 @@
 			  <label><input id="checkedAnonymous" ng-model="checkedInput" type="checkbox" name="anonymous" value="anonymous" type="checkbox" >Anonymous</label>
 			</div>
 			<!-- add image -->
-			<div>Add an image from the web: <input type="text" ng-model="imageInput" placeholder="Image url" class="input-large"></div>
+			<div>Add an image from the web: <input type="text" ng-model="imageInput" placeholder="  Image url" class="input-large"></div>
 			<!-- submit button -->
 			<button type="button" class="btn btn-secondary btn-lg" ng-show="userLoggedIn()" ng-click="Stories()">Submit</button>
 			<!-- only shows if not logged in -->
