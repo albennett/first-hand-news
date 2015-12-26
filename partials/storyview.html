@@ -6,6 +6,8 @@
 <!-- Title and image of story -->
 		<h1>{{ storiesArray[6].$value}}</h1>
 		<p>{{ storiesArray[3].$value }} </p>
+		<img align="middle" class="image-storyview" ng-show="images" src="{{storiesArray[2].$value}}">
+
 		<div ng-hide="">
 		<!-- hide author & image if marked as anonymous -->
 		<p ng-hide="Anonymous"> by : <a href="#/user/{{theId}}"> {{ storiesArray[4].$value }}</a> </p>

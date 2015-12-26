@@ -220,6 +220,16 @@ input[type=text]{
 }
 
 
+/*story view*/
+
+.image-storyview{
+	width: 80%;
+	max-width: 700px;
+	display: block;
+	margin: 0 auto;
+}
+
+
 /*Profil page*/
 .styling-yours{
 	margin: 5px;

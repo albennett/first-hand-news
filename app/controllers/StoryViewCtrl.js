@@ -11,6 +11,10 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 	$scope.RateRef = $firebaseObject(ratingRef);
 	var userStoryRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId + "/usersRanking")
   $scope.storiesUsersArray = $firebaseArray(userStoryRef);
+   $scope.images = true;
+
+
+
 
 	$scope.logout = function(){
 	  $firebaseAuth(ref).$unauth();
@@ -25,6 +29,11 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 
   $scope.storiesArray.$loaded()
   .then(function(){
+
+  	if ($scope.storiesArray[2].$value === ""){
+  		images = false;
+  	}
+
   	console.log("storiesarray", $scope.storiesArray);
   	 $scope.theId = $scope.storiesArray[1].$value;
   	 console.log("id", $scope.storiesArray[6].$value);
