@@ -260,6 +260,12 @@ a{
 	margin: 10px 10px 10px 20px;
 }
 
+.input-large{
+	width: 400px;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
+
 /*facebook button*/
 
 .loginBtn {
