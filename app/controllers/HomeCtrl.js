@@ -12,6 +12,7 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
     $scope.uidRefData = $firebaseObject(uidRef);
     var storiesRef = new Firebase ("https://first-hand-accounts.firebaseio.com/stories");
     $scope.storyRef = $firebaseArray(storiesRef);
+    console.log("storyref", $scope.storyRef);
     var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
     $scope.allCategories = $firebaseArray(categoriesRef);
 //adds event listener to grab id of categories

@@ -1,16 +1,11 @@
 body {
-	background-color: white;
+	background-color: #eee;
 }
 /*
 a{
 	color: #191919;
 	background-color: #FFF056 ;
 }*/
-
-.banksy{
-	display: inline-block;
-	float: right;
-}
 
 .top5-story{
 	background-color: white;
@@ -55,12 +50,13 @@ a{
 }
 
 #explaining-div{
-	background: rgba(0,0,0, 0.3);
-	color: white;
+	background: white;
+	color: gray;
 	font-size: 2.3em;
-	width: 80%;
+	width: 100%;
 	margin: auto;
 	text-align: center;
+
 }
 
 .wrapper-nav{
@@ -99,6 +95,92 @@ a{
 	margin-bottom: 30px;
 	margin-top: 15px;
 }
+
+/*logged in home*/
+
+.story-author{
+	border-bottom: thin gray solid;
+	padding-bottom: 30px;
+}
+
+/*.line{
+	border-right: gray thin solid;
+}*/
+
+.categories{
+    padding: 2%;
+    box-sizing: border-box;
+
+}
+
+.line-seperator{
+	height:1px;
+
+	background:#717171;
+
+	border-bottom:1px solid #313030;
+}
+
+.home-story-padding{
+
+}
+
+@media (min-width: 900px){
+  #left-home {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    overflow-y: scroll; 
+    margin-top: 85px;
+    margin:10px; 
+    padding:10px;
+  }
+
+  .top-home{
+  	margin-top: 60px;
+  }
+  
+#left{
+	margin-left: 70px;
+	margin-top: 60px;
+}
+
+#right{
+	margin-right: 70px;
+	margin-top: 60px;
+}
+
+  #right-home {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
+    width: 60%;
+    margin-top: 85px;
+    padding:10px;
+
+  }
+}
+
+#left-home {
+  text-align: center;
+  height:100%;
+  margin-top: 85px;
+  margin:10px; 
+  padding:10px;
+
+}
+
+#right-home {
+  height:100%;
+  margin-top: 85px;
+  margin:10px; 
+  padding:10px;
+}
+
 
 /*Profil page*/
 .styling-yours{

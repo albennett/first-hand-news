@@ -5,13 +5,14 @@
   <img id="home-image" src="../images/girlportrait-edited.jpg">
 </div>
 <div ng-show="!userLoggedIn()" id="explaining-div">First-hand News:  knausgaard selvage kale chips green juice disrupt asymmetrical kickstarter yr. Bitters hella XOXO, 90's YOLO quinoa gastropub craft beer keytar bespoke farm-to-table squid fashion axe cornhole. 
-<br>Meditation forage kinfolk, offal lomo twee pour-over taxidermy celiac single-origin coffee selvage cliche squid butcher. Sartorial leggings beforamps meditation disrupt. Everyday carry next level f </div>
+Meditation forage kinfolk, offal lomo twee pour-over taxidermy celiac single-origin coffee selvage cliche squid butcher. Sartorial leggings beforamps meditation disrupt. Everyday carry next level f </div>
 
 <div id="wrap" class="fix-it" ng-show="!userLoggedIn()"> 
   <h3>Top Stories</h3>
   <span ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
     <span id="{{story.$id}}" class="top5-story"><a class="story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></span>
-</div>
+  </span>  
+</div> 
 <div class="container center-cat">
 
   <div ng-show="!userLoggedIn()" class="starter-template">
@@ -20,7 +21,44 @@
             <h1 class="font-cat" id="{{category.$id}}"><a class="categories-color" href="#/category/{{category.$id}}">{{category.title}}</a></h1>
           </div>
         </div>
+  </div>
 
-	 </div>
+  </div>
+</div>
+<!-- if logged in home -->
 
-</div> 
+<div class="container">
+
+  <div class="starter-template">
+    <div class="row">
+      <div class="col-sm-4 line col-md-offset-2" id="left-home" ng-show="userLoggedIn()">
+
+        <!-- <div class="box">
+          <div class="container-1">
+              <span class="icon"><i class="fa fa-search"></i></span>
+              <input type="search" id="search" placeholder="Search Category" />
+          </div> -->
+
+          <div id="left" class="categories" ng-repeat="category in allCategories">
+            <div class="" id="{{category.$id}}">
+              <h2 class="font-cat" id="{{category.$id}}"><a class="categories-color" href="#/category/{{category.$id}}">{{category.title}}</a></h2>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-7" id="right-home" ng-show="userLoggedIn()">
+          <h3 class="top-home">Top Stories</h3>
+          <span id="right" ng-repeat="story in storyRef | orderBy:'-rating'">
+            <h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
+            <p> {{story.input | limitTo: 150}}</p>
+            <p class="story-author"> by: {{story.name}}</p>
+          </span> 
+      </div>
+    </div>
+  </div>
+</div>
+
+	 <!-- </div> -->
+
+<!-- </div>  -->
+
+
