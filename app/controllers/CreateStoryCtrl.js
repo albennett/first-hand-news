@@ -31,6 +31,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $scope.Categories = function () {
     if ($scope.categoryTitle === "") {
       storyCreated.Category = $scope.selectedCategory.$id;
+      storyCreated.CatTitle = $scope.selectedCategory.title;
     } else { //if category is created, then run sendCategory function
       console.log("created", $scope.categoryTitle);
       $scope.sendCategory();
@@ -46,6 +47,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
        createdCategoryId = createdcat.key();
        //stores the new category id in storyCreated
        storyCreated.Category = createdCategoryId;
+       storyCreated.CatTitle = $scope.categoryTitle;
     }) 
   }
 

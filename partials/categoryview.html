@@ -8,8 +8,22 @@
 					<h1 class="margin-cat-title">{{ selectedCat[0].$value }}</h1>
 			<!-- each story associated to the category, order by highest rated -->
 					<div ng-repeat="story in storiesArray | orderBy:'-rating'" class="img-wrap margin-cat-story">
-						<h4 id="{{story.$id}}"> <a class="cat-story-title" href="#/story/{{story.$id}}">{{story.title}}</a></h4>
-					  <p id="{{story.$id}}"> {{ story.input | limitTo: 150 }}</p>
+
+
+					<!-- <h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
+            <p><a href="#/category/{{story.Category}}">{{story.CatTitle}}</a></p>
+            <img ng-show="story.image.length" class="image-home-story" src="{{story.image}}">
+            <p ng-show="!story.image.length"> {{story.input | limitTo: 300}}<a class="readmore" href="#/story/{{story.$id}}">Read More</a></p>
+            <footer class="line-story"></footer> -->
+
+            <h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
+            <p ng-show="!story.anonymous" class="story-author"><a href="#/user/{{story.User}}"><img class="image-circle" src="{{story.profileImage}}"></a>{{story.name}}</p> in <a href="#/category/{{story.Category}}">{{story.CatTitle}}</a>
+            <img ng-show="story.image.length" class="image-home-story" src="{{story.image}}">
+            <p ng-show="!story.image.length"> {{story.input | limitTo: 300}}<a class="readmore" href="#/story/{{story.$id}}">Read More</a></p>
+            <footer class="line-story"></footer>
+
+						<!-- <h4 id="{{story.$id}}"> <a class="cat-story-title" href="#/story/{{story.$id}}">{{story.title}}</a></h4>
+					  <p id="{{story.$id}}"> {{ story.input | limitTo: 150 }}</p> -->
 					</div>
 				</div>
 			</div>

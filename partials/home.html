@@ -49,24 +49,12 @@
 
           <div>
             <h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
+            <p ng-show="!story.anonymous" class="story-author"><a href="#/user/{{story.User}}"><img class="image-circle" src="{{story.profileImage}}"></a>{{story.name}}</p> in <a href="#/category/{{story.Category}}">{{story.CatTitle}}</a>
             <img ng-show="story.image.length" class="image-home-story" src="{{story.image}}">
-            <p ng-show="!story.image.length"> {{story.input | limitTo: 300}}</p>
-            <p ng-show="story.anonymous" class="story-author"> by: {{story.name}}</p>
+            <p ng-show="!story.image.length"> {{story.input | limitTo: 300}}<a class="readmore" href="#/story/{{story.$id}}">Read More</a></p>
+            <footer class="line-story"></footer>
+            
            </div> 
-
-          <!-- with images -->
-              <!-- <img ng-show="story.image.length" class="image-home-story" src="{{story.image}}">
-              <h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
-              <p> {{story.input | limitTo: 150}}</p>
-              <p class="story-author"> by: {{story.name}}</p>
-            </div> -->
-            <!-- withoutimages -->
-            <!-- <div ng-hide="story.image.length">
-              <span id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></span>
-              <p> {{story.input | limitTo: 150}}</p>
-              <p class="story-author"> by: {{story.name}}</p>
-            </div>
-           -->
         </div>
       </div>
     </div>
