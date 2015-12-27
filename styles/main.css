@@ -21,6 +21,13 @@ a{
 }
 /*Home View*/
 
+.home-title-name{
+	margin-top: -150px;
+	margin-bottom: 105px;
+	color: white;
+	text-align: center;
+}
+
 #home-image {
 	/*background-image: url(../images/girlportrait.jpg);*/
  	/*background-size: 100%;*/
@@ -88,6 +95,7 @@ input[type=text]{
 	width: 100%;
 	margin: auto;
 	text-align: center;
+	padding: 20px 100px;
 
 }
 
