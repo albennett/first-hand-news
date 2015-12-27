@@ -36,6 +36,22 @@ a{
 	font-size: 4em;
 }
 
+.image-home-story{
+	max-width:600px;
+    max-height:300px;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.story-author{
+	padding-bottom: 30px;
+}
+
+.home-story-padding{
+	/*padding-left: 40px;*/
+}
+
 #home-image {
 	/*background-image: url(../images/girlportrait.jpg);*/
  	/*background-size: 100%;*/
@@ -159,10 +175,7 @@ input[type=text]{
 	margin-top: 50px;
 }
 
-.story-author{
-	border-bottom: thin gray solid;
-	padding-bottom: 30px;
-}
+
 
 /*.line{
 	border-right: gray thin solid;
@@ -199,6 +212,7 @@ input[type=text]{
 #right{
 	margin-right: 70px;
 	margin-top: 60px;
+	/*height: 250px;*/
 }
 
   #right-home {

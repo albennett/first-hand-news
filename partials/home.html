@@ -1,28 +1,27 @@
 <div class= "navmargin" ng-include="'partials/nav.html'"></div>
-  <div class="row">
+<div class="row">
 
-<div ng-show="!userLoggedIn()">
-  <img id="home-image" src="../images/girlportrait-edited.jpg">
-  <h1 class="home-title-name">SHARE YOUR FIRST HAND ACCOUNT</h1>
-</div>
-<div ng-show="!userLoggedIn()" id="explaining-div">We are not your normal news site. In a time where the truth can feel lost in translation or filtered through agendas, we have created a space to connect directly with those bearing witness on the ground. Here, you can listen to and share your first hand accounts of global events as they unfold.  </div>
-
-<div id="wrap" class="fix-it" ng-show="!userLoggedIn()"> 
-  <h3>Top Stories</h3>
-  <span ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
-    <span id="{{story.$id}}" class="top5-story"><a class="story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></span>
-  </span>  
-</div> 
-<div class="container center-cat">
-
-  <div ng-show="!userLoggedIn()" class="starter-template">
-        <div ng-repeat="category in allCategories">
-          <div class="img-wrap col-md-3 categories" id="{{category.$id}}">
-            <h1 class="font-cat" id="{{category.$id}}"><a class="categories-color" href="#/category/{{category.$id}}">{{category.title}}</a></h1>
-          </div>
-        </div>
+  <div ng-show="!userLoggedIn()">
+    <img id="home-image" src="../images/girlportrait-edited.jpg">
+    <h1 class="home-title-name">SHARE YOUR FIRST HAND ACCOUNT</h1>
   </div>
+  <div ng-show="!userLoggedIn()" id="explaining-div">We are not your normal news site. In a time where the truth can feel lost in translation or filtered through agendas, we have created a space to connect directly with those bearing witness on the ground. Here, you can listen to and share your first hand accounts of global events as they unfold.  </div>
 
+  <div id="wrap" class="fix-it" ng-show="!userLoggedIn()"> 
+    <h3>Top Stories</h3>
+    <span ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
+      <span id="{{story.$id}}" class="top5-story"><a class="story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></span>
+    </span>  
+  </div> 
+  <div class="container center-cat">
+
+    <div ng-show="!userLoggedIn()" class="starter-template">
+      <div ng-repeat="category in allCategories">
+        <div class="img-wrap col-md-3 categories" id="{{category.$id}}">
+          <h1 class="font-cat" id="{{category.$id}}"><a class="categories-color" href="#/category/{{category.$id}}">{{category.title}}</a></h1>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <!-- if logged in home -->
@@ -45,20 +44,34 @@
         </div>
       </div>
       <div class="col-sm-7" id="right-home" ng-show="userLoggedIn()">
-          <h3 class="top-home">Top Stories</h3>
-          <span id="right" ng-repeat="story in storyRef | orderBy:'-rating'">
-          <img ng-show="story.image.length" src="{{story.image}}">
+        <h3 class="top-home">Top Stories</h3>
+        <div id="right" ng-repeat="story in storyRef | orderBy:'-rating'">
+
+          <div>
             <h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
-            <p> {{story.input | limitTo: 150}}</p>
-            <p class="story-author"> by: {{story.name}}</p>
-          </span> 
+            <img ng-show="story.image.length" class="image-home-story" src="{{story.image}}">
+            <p ng-show="!story.image.length"> {{story.input | limitTo: 300}}</p>
+            <p ng-show="story.anonymous" class="story-author"> by: {{story.name}}</p>
+           </div> 
+
+          <!-- with images -->
+              <!-- <img ng-show="story.image.length" class="image-home-story" src="{{story.image}}">
+              <h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
+              <p> {{story.input | limitTo: 150}}</p>
+              <p class="story-author"> by: {{story.name}}</p>
+            </div> -->
+            <!-- withoutimages -->
+            <!-- <div ng-hide="story.image.length">
+              <span id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></span>
+              <p> {{story.input | limitTo: 150}}</p>
+              <p class="story-author"> by: {{story.name}}</p>
+            </div>
+           -->
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-	 <!-- </div> -->
-
-<!-- </div>  -->
+</div> 
 
 
