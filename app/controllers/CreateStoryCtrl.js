@@ -12,6 +12,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $scope.categoryTitle = "";
   $scope.storyTitle = "";
   $scope.imageInput = "";
+  $scope.locationInput = "";
   storyCreated = {};
   $scope.checkedInput = false;
   $('#CategoryModal').modal();
@@ -63,6 +64,7 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
     storyCreated.rating = 0;
     storyCreated.anonymous = $scope.checkedInput;
     storyCreated.image = $scope.imageInput;
+    storyCreated.location = $scope.locationInput;
     storyCreated.profileImage = $scope.authData.facebook.profileImageURL;
     $scope.allStories.$add(storyCreated);
     $location.path("#/user/" + $scope.authData.uid);

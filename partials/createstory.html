@@ -54,7 +54,9 @@
 			  <label><input id="checkedAnonymous" ng-model="checkedInput" type="checkbox" name="anonymous" value="anonymous" type="checkbox" >Anonymous</label>
 			</div>
 			<!-- add image -->
-			<div>Add an image from the web: <input type="text" ng-model="imageInput" placeholder="  Image url" class="input-large"></div>
+			<div>Add an image from the web: <input type="text" ng-model="imageInput" placeholder="  Image url" class="input-large form-control"></div>
+			<!-- add city/country -->
+			<div>City/Country experience took place in: <input type="text" ng-model="locationInput" placeholder="location" class="input-large form-control"></div>
 			<!-- submit button -->
 			<button type="button" class="btn btn-secondary btn-lg" ng-show="userLoggedIn()" ng-click="Stories()">Submit</button>
 			<!-- only shows if not logged in -->
