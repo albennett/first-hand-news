@@ -7,14 +7,23 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 	$scope.authData = $firebaseAuth(ref).$getAuth();
 	var newRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId);
 	$scope.storiesArray = $firebaseArray(newRef);
+	console.log("starray", $scope.storiesArray);
 	var ratingRef = new Firebase ("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId + "/rating");
 	$scope.RateRef = $firebaseObject(ratingRef);
 	var userStoryRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories/" + selectStoryId + "/usersRanking")
   $scope.storiesUsersArray = $firebaseArray(userStoryRef);
    $scope.images = true;
+   $scope.commentInput = "";
+   var commentData = {};
 
 
-
+   // $scope.addComment = function(){
+   // 	console.log("comment", $scope.commentInput);
+   // 	commentData.input = $scope.commentInput;
+   // 	commentData.input.user = $scope.authData.uid;
+   // 	commentData.input.userName = $scope.authData.displayName;
+   // 	$scope.storiesUsersArray.$add(commentData);
+   // }
 
 	$scope.logout = function(){
 	  $firebaseAuth(ref).$unauth();
