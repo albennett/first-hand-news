@@ -61,8 +61,9 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
     storyCreated.rating = 0;
     storyCreated.anonymous = $scope.checkedInput;
     storyCreated.image = $scope.imageInput;
+    storyCreated.profileImage = $scope.authData.facebook.profileImageURL;
     $scope.allStories.$add(storyCreated);
-    // $location.path("#/user/" + $scope.authData.uid);
+    $location.path("#/user/" + $scope.authData.uid);
   }
 //code for drop down
   $('.dropdown-menu').find('input').click(function (e) {
