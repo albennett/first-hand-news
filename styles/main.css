@@ -222,6 +222,15 @@ input[type=text]{
 
 /*story view*/
 
+.heart{
+	color:red;
+}
+
+.title-story{
+	font-size: 2em;
+	font-style: bold;
+}
+
 .image-storyview{
 	width: 80%;
 	max-width: 700px;

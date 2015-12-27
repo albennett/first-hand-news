@@ -4,7 +4,13 @@
 
   <div class="starter-template">
 <!-- Title and image of story -->
-		<h1>{{ storiesArray[6].$value}}</h1>
+		<span class="title-story">{{ storiesArray[6].$value}}</span>
+			<span ng-disabled="voted">
+				<button ng-click="incrementVote()" type="button" class="btn btn-default btn-sm">
+		      <span class="glyphicon glyphicon-heart heart"></span> 
+				  <span class="count">{{RateRef.$value}}</span>
+		    </button>
+			</span>
 		<p>{{ storiesArray[3].$value }} </p>
 		<img align="middle" class="image-storyview" ng-show="images" src="{{storiesArray[2].$value}}">
 
@@ -16,10 +22,6 @@
 		<image ng-hide="Anonymous" src="{{userImage[1].$value}}"></image>
 		</div>
 <!-- disabled voting if voted is true -->
-		<div ng-disabled="voted">
-		<button ng-click="incrementVote()">Pretend Arrow</button>
-		    <p class="count">{{RateRef.$value}}</p>
-		</div>
 
 	</div>
 </div>
