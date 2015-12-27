@@ -47,6 +47,7 @@
       <div class="col-sm-7" id="right-home" ng-show="userLoggedIn()">
           <h3 class="top-home">Top Stories</h3>
           <span id="right" ng-repeat="story in storyRef | orderBy:'-rating'">
+          <img ng-show="story.image.length" src="{{story.image}}">
             <h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
             <p> {{story.input | limitTo: 150}}</p>
             <p class="story-author"> by: {{story.name}}</p>

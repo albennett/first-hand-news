@@ -31,7 +31,7 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
   .then(function(){
 
   	if ($scope.storiesArray[2].$value === ""){
-  		images = false;
+  		$scope.images = false;
   	}
 
   	console.log("storiesarray", $scope.storiesArray);
