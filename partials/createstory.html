@@ -7,7 +7,7 @@
 	      <div class="modal-header">
 	      </div>
 	      <div id="modal-body" class="modal-body">
-	      <h3> Choose an existing category</h3>
+	      <h3 class="reddish-color"> Choose an existing category</h3>
 	      <!-- new search dropdown -->
 	      <div class="dropdown dropdown-scroll">
 	      <button class="btn btn-default dropdown-toggle search-spacing" type="button" id="dropdownMenu1" data-toggle="dropdown">Search Categories <span class="caret"></span>
@@ -26,13 +26,13 @@
 		    </div>
 		    </div>
 		    <p>{{selectedCategory.title}}</p>
-		    <h3>Or create a new category </h3>
+		    <h3 class="reddish-color">Or create a new category </h3>
 	      <!-- end search dropdown -->
 					<!--Create a new category-->
 		    <input cols="15" rows="10" type="text" id="category-input" ng-model="categoryTitle" class="form-control" placeholder="Add category title">
 	      </div>
 	      <div class="modal-footer">
-	      <button type="button" data-dismiss="modal" id="btn-xl" class="btn btn-primary" ng-click="Categories()">Submit</button>
+	      <button type="button" data-dismiss="modal" id="btn-xl" class="btn btn-default" ng-click="Categories()">Submit</button>
 	      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
 	      </div>
 	    </div><!-- /.modal-content -->
@@ -43,7 +43,7 @@
 
   <div class="starter-template">
 <!-- content on page, not modal -->
-		<h1> Share your experience</h1>
+		<h1 class="bluish-color"> Share your experience</h1>
 		<!-- add your own story -->
 		<div>
 			<input type="text" id="title" ng-model="storyTitle" class="form-control" placeholder="Title">
@@ -58,7 +58,7 @@
 			<!-- add city/country -->
 			<div>City/Country experience took place in: <input type="text" ng-model="locationInput" placeholder="location" class="input-large form-control"></div>
 			<!-- submit button -->
-			<button type="button" class="btn btn-secondary btn-lg" ng-show="userLoggedIn()" ng-click="Stories()">Submit</button>
+			<button type="button" ng-show="userLoggedIn()" ng-click="Stories()" class="btn btn-default btn-lg">Submit</button>
 			<!-- only shows if not logged in -->
 			<p ng-show="!userLoggedIn()">Log in to write stories</p>
 		</div>	

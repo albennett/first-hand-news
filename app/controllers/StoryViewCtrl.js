@@ -38,7 +38,7 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
   	 $scope.theId = $scope.storiesArray[1].$value;
   	 console.log("id", $scope.storiesArray[6].$value);
 
-  	 $scope.Anonymous = $scope.storiesArray[2].$value;
+  	 $scope.Anonymous = $scope.storiesArray[3].$value;
 
   	console.log("theId", $scope.theId);
 	  var getImage = new Firebase ("https://first-hand-accounts.firebaseio.com/users/" + $scope.theId);

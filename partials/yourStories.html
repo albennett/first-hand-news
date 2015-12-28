@@ -22,7 +22,7 @@
             <p><a href="#/category/{{story.Category}}">{{story.CatTitle}}</a></p>
             <img ng-show="story.image.length" class="image-home-story" src="{{story.image}}">
             <p ng-show="!story.image.length"> {{story.input | limitTo: 300}}<a class="readmore" href="#/story/{{story.$id}}">Read More</a></p>
-            <button type="button" class="btn btn-secondary btn-md" ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
+            <button type="button" ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)" class="btn btn-default">Delete</button>
             <footer class="line-story"></footer>
     </div>
 

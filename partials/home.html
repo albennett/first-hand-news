@@ -46,7 +46,7 @@
 
   <div class="starter-template">
     <div class="row">
-      <div class="col-sm-4 line col-md-offset-2" id="left-home">
+      <div class="col-sm-4 line col-md-offset-2 scrollable" id="left-home">
           <div class="container-1">
               <span class="icon"><i class="fa fa-search"></i></span>
               <input ng-model="query" type="search" class="search rounded" id="search" placeholder="Search Categories" />
@@ -58,7 +58,7 @@
             </div>
         </div>
       </div>
-      <div class="col-sm-7" id="right-home" ng-show="userLoggedIn()">
+      <div class="col-sm-8 scrollable" id="right-home" ng-show="userLoggedIn()">
         <h3 class="top-home">Top Stories</h3>
         <div id="right" ng-repeat="story in storyRef | orderBy:'-rating'">
 
