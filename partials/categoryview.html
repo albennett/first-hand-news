@@ -5,7 +5,7 @@
 	  <div class="starter-template">
 			<div class="row">    
 				<div class="col-sm-10">
-					<h1 class="margin-cat-title">{{ selectedCat[0].$value }}</h1>
+					<h1 class="margin-cat-title">{{ selectedCat[0].$value }}</h1> 
 			<!-- each story associated to the category, order by highest rated -->
 					<div ng-repeat="story in storiesArray | orderBy:'-rating'" class="img-wrap margin-cat-story">
 

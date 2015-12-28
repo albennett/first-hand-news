@@ -1,37 +1,53 @@
 <div class= "navmargin" ng-include="'partials/nav.html'"></div>
-<div class="row">
 
-  <div ng-show="!userLoggedIn()">
-    <img id="home-image" src="../images/girlportrait-edited.jpg">
-    <h1 class="home-title-name">SHARE YOUR FIRST HAND ACCOUNT</h1>
-  </div>
-  <div ng-show="!userLoggedIn()" id="explaining-div">We are not your normal news site. In a time where the truth can feel lost in translation or filtered through agendas, we have created a space to connect directly with those bearing witness on the ground. Here, you can listen to and share your first hand accounts of global events as they unfold.  </div>
-
-  <div id="wrap" class="fix-it" ng-show="!userLoggedIn()"> 
-    <h3>Top Stories</h3>
-    <span ng-repeat="story in storyRef | orderBy:'-rating' | limitTo:5">
-      <span id="{{story.$id}}" class="top5-story"><a class="story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></span>
-    </span>  
-  </div> 
-  <div class="container center-cat">
-
-    <div ng-show="!userLoggedIn()" class="starter-template">
-      <div ng-repeat="category in allCategories">
-        <div class="img-wrap col-md-3 categories" id="{{category.$id}}">
-          <h1 class="font-cat" id="{{category.$id}}"><a class="categories-color" href="#/category/{{category.$id}}">{{category.title}}</a></h1>
-        </div>
-      </div>
+  <div class="row" ng-show="!userLoggedIn()">
+    <div>
+      <img id="home-image" src="../images/girlportrait-edited.jpg">
+      <h1 class="home-title-name">SHARE THE NEWS <br>THROUGH YOUR EYES</h1>
     </div>
-  </div>
+    <div id="explaining-div">We are not your normal news site. In a time where the truth can feel lost in translation or filtered through agendas, we have created a space to connect directly with those bearing witness on the ground. Here, you can listen to and share your first hand accounts of global events as they unfold.  </div>
+
+    <div class="world-map">
+
+    <button type="button" class="btn btn-md btn-danger button-map2 glyphicon glyphicon-asterisk" data-toggle="popover" data-content="<a href='#/story/{{storyRef[0].$id}}' >{{storyRef[0].title}}</a>"></button>
+
+
+    <button type="button" class="btn btn-md btn-danger button-map glyphicon glyphicon-asterisk" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?"></button>
+
+    <button type="button" class="btn btn-md btn-danger button-map2 glyphicon glyphicon-asterisk" data-toggle="popover" data-content="<link href='www.facebook.com'>"></button>
+
+    </div>
+    
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover({html:true});   
+    });
+    </script>
+
+    <h2 class="haha4">Browse News Categories 
+      <span class="container-1">
+        <span class="icon"><i class="fa fa-search"></i></span>
+        <input ng-model="query" type="search" class="search rounded" id="search">
+      </span>
+    </h2>
+    
+    <div id="haha2">
+        <div id="hahaha" ng-repeat="category in allCategories | filter: query">
+          <div id="{{category.$id}}">
+            <h1 id="{{category.$id}}"><a class="haha-3" href="#/category/{{category.$id}}">{{category.title}}</a></h1>
+          </div>
+        </div>
+    </div>
 </div>
+   
 <!-- if logged in home -->
 
-<div class="container">
+<div class="container" ng-show="userLoggedIn()">
 
   <div class="starter-template">
     <div class="row">
-      <div class="col-sm-4 line col-md-offset-2" id="left-home" ng-show="userLoggedIn()">
-        <!-- <input type=search results=5 placeholder=Search... name=s> -->
+      <div class="col-sm-4 line col-md-offset-2" id="left-home">
+        <input type=search results=5 placeholder=Search... name=s>
           <div class="container-1">
               <span class="icon"><i class="fa fa-search"></i></span>
               <input ng-model="query" type="search" class="search rounded" id="search" placeholder="Search Categories" />

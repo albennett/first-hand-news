@@ -1,10 +1,38 @@
 body {
-	background-color: #fefefe;
+	/*background-color: #fefefe;*/
+	background-color: white;
 }
 
 h3{
 	font-family: 'Montserrat', Arial, serif; 
 	font-weight: 400; 
+}
+
+li a {
+	font-size: 1.3em;
+}
+
+.navbar-nav{
+	float:right;
+}
+
+#hahaha{
+	text-align: center;
+	color:white;
+}
+
+#haha2{
+	background-color: #0b99bc;
+	padding: 20px;
+}
+
+.haha-3{
+	color:white;
+}
+
+.haha4{
+	text-align: center;
+	width: 100%;
 }
 
 /*for log in button*/
@@ -20,16 +48,26 @@ h3{
 .navbar {
 	background-color: #fefefe;
 }
+
+.navbar-brand{
+	font-size: 2em;
+}
+
+#nav-color{
+	color: #f05b47;
+
+}
 /*Home View*/
 
+
 .home-title-name{
-	margin-top: -230px;
+	margin-top: -195px;
 	margin-bottom: 160px;
 	color: white;
-	text-align: center;
 	font-family: 'Montserrat', Arial, serif; 
 	font-weight: 700; 
-	font-size: 4em;
+	font-size: 3.5em;
+	text-align: center;
 }
 
 .image-home-story{
@@ -55,8 +93,84 @@ h3{
  	/*background-size: 100%;*/
  	/*background-repeat: no-repeat;*/
  	/*height: 500px;*/
+ 	clear: both;
  	width: 100%;
  	margin: 0;
+}
+
+
+.button-map{
+	margin-left: 20%;
+	margin-top: 30%;
+	clear:both;
+	width: 40px;
+	}
+
+.button-map2{
+	margin-left: 40%;
+	margin-top: 30%;
+}
+
+.button-map3{
+	margin-left: 60%;
+
+}
+
+
+.map-button{
+	margin-left: 100px;
+}
+
+.asterick{
+	color: red;
+	font-size: 2em;
+	padding-top: 20%;
+	padding-left: 30%;
+}
+
+.asterick-2{
+	color: red;
+	font-size: 2em;
+	padding-top: 20%;
+	padding-left: 35%;
+}
+
+.asterick-3{
+	color: red;
+	font-size: 2em;
+	padding-top: 20%;
+	padding-left: 40%;
+}
+
+/*not logged in*/
+
+.categories-notloggedin{
+	height: 280px;
+	width: 340px;
+	background: #fefefe;
+	/*border: 2px solid #fcfcfc;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin: 10px;*/
+	padding: 15px;
+	padding-bottom: 10px;
+	transition: opacity .4s ease-in-out;
+	font-family: 'Montserrat', Arial, serif; 
+	font-weight: 700; 
+	margin:auto;
+
+}
+
+#container {
+    text-align: center;
+    margin: 8em 3em;
+}
+
+.world-map{
+	background-image: url(../images/world-map.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height:1000px;
+
 }
 
 /*search input*/
@@ -99,7 +213,7 @@ input[type=text]{
 }
 
 .categories-color{
-	color: black;
+	color: #0b99bc;
 	font-family: 'Montserrat', Arial, serif; 
 	font-weight: 500; 
 	font-size: 1.2em;
@@ -108,23 +222,26 @@ input[type=text]{
 
 .story-padding{
 	padding: 25px;
-	color: #191919;
+	color: #0b99bc;
 	/*background-color: #FFF056;
 	margin: 30px;*/
 	font-family: 'Montserrat', Arial, serif; 
 	font-weight: 400; 
 }
 
+.top-story-margin{
+	/*margin-top: -100px;*/
+}
+
 #explaining-div{
-	background: white;
-	color: gray;
-	font-size: 2.3em;
+	color: #0b99bc;
+	font-size: 3em;
 	width: 100%;
 	margin: auto;
 	text-align: center;
 	padding: 20px 100px;
 	font-family: 'Montserrat', Arial, serif; 
-	font-weight: 200; 
+	font-weight: 200;
 
 }
 
@@ -285,7 +402,7 @@ input[type=text]{
 }
 
 .story-title{
-	color: #191919;
+	color: #00ccd6;
 }
 
 .page-header p{
@@ -322,7 +439,7 @@ input[type=text]{
 
 .cat-story-title{
 	font-size: 1.5em;
-	color: #191919;
+	color: #0b99bc;
 }
 
 .margin-cat-story{

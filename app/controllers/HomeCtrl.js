@@ -1,6 +1,6 @@
 app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth", "StorageFactory",
-  function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth, StorageFactory) {
-
+  function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth, StorageFactory){
+  
     var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
     var userExists = false;
     $scope.authData = $firebaseAuth(ref).$getAuth();
@@ -16,9 +16,13 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
     var categoriesRef = new Firebase("https://first-hand-accounts.firebaseio.com/categories");
     $scope.allCategories = $firebaseArray(categoriesRef);
 //adds event listener to grab id of categories
+
     document.querySelector("body").addEventListener("click", function(event) {
       eventId = event.target.id; 
     });
+
+
+
 //checks to see if user is logged in, restricted views implemented if not
     $scope.userLoggedIn = function(auth) {
       if ($scope.authData)  {
@@ -33,7 +37,7 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
       $location.path('#/home');
     };
 
-   //Logout, unauthorizes the user and logs them back out
+   // Logout, unauthorizes the user and logs them back out
     $scope.logout = function(){
       $firebaseAuth(ref).$unauth();
       console.log("logged out");
@@ -54,5 +58,6 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
           });
         }
       });
+
     
 }]);
