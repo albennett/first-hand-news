@@ -13,16 +13,16 @@
 				  <span class="count">{{RateRef.$value}}</span>
 		    </button>
 			</span>
-		<p>{{ storiesArray[5].$value }} </p>
+		<p class="content-size">{{ storiesArray[5].$value }} </p>
 		<!-- <div ng-show="storiesArray[2].$value.length"> -->
 		<img ng-show="storiesArray[4].$value.length" align="middle" class="image-storyview" src="{{storiesArray[4].$value}}">
 		<!-- </div> -->
 
 		<div ng-hide="">
 		<!-- hide author & image if marked as anonymous -->
-		<p ng-hide="Anonymous"> Author : <a href="#/user/{{theId}}"> {{ storiesArray[6].$value }}</a> </p>
+		<p ng-hide="Anonymous" class="content-size"> Author : <a href="#/user/{{theId}}"> {{ storiesArray[6].$value }}</a> </p>
 		<!-- <image src="{{storiesArray[].$value}}"></image> -->
-		<p ng-show="Anonymous"> Author: Anonymous </p>
+		<p ng-show="Anonymous" class="content-size"> Author: Anonymous </p>
 		<image ng-hide="Anonymous" src="{{userImage[7].$value}}"></image>
 		</div>
 <!-- disabled voting if voted is true -->

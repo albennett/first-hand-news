@@ -13,6 +13,14 @@ li a {
 	font-size: 1.3em;
 }
 
+a{
+	color: gray;;
+}
+
+a:hover{
+	color: black;
+}
+
 .navbar-nav{
 	float:right;
 }
@@ -37,6 +45,10 @@ li a {
 	margin-bottom: 20px;
 	padding-right: 30px;
 	padding-left: 30px;
+}
+
+.content-size{
+	font-size: 1.2em;
 }
 
 /*for log in button*/
@@ -114,6 +126,9 @@ li a {
 	color: #0b99bc;
 }
 
+.home-title-color{
+	color: #777;
+}
 #home-image {
 	/*background-image: url(../images/girlportrait.jpg);*/
  	/*background-size: 100%;*/
@@ -305,7 +320,9 @@ input[type=text]{
 
 }
 
-
+.img-circle{
+	margin-left: 30px;
+}
 
 .img-wrap {
 	border-bottom: thin gray solid;
@@ -349,9 +366,7 @@ input[type=text]{
 	margin-left: 0;
 	width: 30%;
 	text-align: center;
-  	height:100%;
- 	margin-top: 85px;
-  	margin:10px; 
+  	height:100%; 
   	padding:10px;
   	position: absolute;
     top: 0px;
@@ -376,6 +391,10 @@ input[type=text]{
   	margin-left: 30px;
 }
 
+.icon-bar{
+	background-color: #f05b47;
+}
+
 
 @media screen and (max-width: 1000px) {
     #left-home {
@@ -394,10 +413,22 @@ input[type=text]{
         width: 100%;
         position: relative;
         /*height: 800px;
-        overflow: scroll;*/
-      
+        overflow: scroll;*/ 
+    }
+
+    .icon-bar{
+    	background-color: #f05b47;;
+    }
+
+    .mobile-image{
+    	background-image: url("../images/world-map.png");
+    	background-size: 100%;
+		background-repeat: no-repeat;
+		height: 165px;
+
     }
 }
+
 
 @media screen and (max-width: 750px) {
 
@@ -423,6 +454,9 @@ input[type=text]{
 
   .top-home{
   	margin-top: 60px;
+  	margin-bottom: -30px;
+  	text-decoration: underline;
+  	color: #0B99BC;
   }
   
 #left{
@@ -440,7 +474,7 @@ input[type=text]{
 /*story view*/
 
 .heart{
-	color:red;
+	color: #f05b47;
 }
 
 .btn-sm{
@@ -451,6 +485,7 @@ input[type=text]{
 .title-story{
 	font-size: 3em;
 	font-style: bold;
+	color: #0b99bc;
 }
 
 .image-storyview{
@@ -510,6 +545,7 @@ input[type=text]{
 
 .margin-cat-title{
 	margin-top: 30px;
+	color: #777;
 }
 
 .cat-story-title{
@@ -539,8 +575,16 @@ input[type=text]{
 	margin-bottom: 30px;
 }
 
+.fa{
+	color:white;
+}
+
 .cat-search-options{
 	margin: 10px 10px 10px 20px;
+}
+
+.search{
+	background-color: white;
 }
 
 .input-large{
