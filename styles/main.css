@@ -314,7 +314,13 @@ input[type=text]{
 
 
 .img-wrap {
-	border-bottom: thin black solid;
+	border-bottom: thin gray solid;
+}
+
+@media screen and (max-width: 800px) {
+    .img-wrap {
+        padding: 30px;
+    }
 }
 
 
@@ -343,12 +349,6 @@ input[type=text]{
 	margin-top: 50px;
 }
 
-
-
-.line-story{
-	border-bottom: gray thin solid;
-	padding-top: 15px;
-}
 
 .categories{
     padding: 2%;
