@@ -19,6 +19,7 @@ a{
 
 a:hover{
 	color: black;
+	text-decoration: none;
 }
 
 .navbar-nav{
@@ -45,6 +46,7 @@ a:hover{
 	margin-bottom: 20px;
 	padding-right: 30px;
 	padding-left: 30px;
+	color: #777;
 }
 
 .content-size{
@@ -139,6 +141,12 @@ a:hover{
  	margin: 0;
 }
 
+
+#featured-stories{
+	padding-top: 70px;
+	padding-left: 95px;
+	color: #777;
+}
 
 .button-map{
 	margin-left: 20%;
@@ -333,6 +341,7 @@ input[type=text]{
         padding: 30px;
     }
 }
+
 
 
 .categories {
@@ -576,7 +585,7 @@ input[type=text]{
 }
 
 .fa{
-	color:white;
+	color:#F5F5F5;
 }
 
 .cat-search-options{

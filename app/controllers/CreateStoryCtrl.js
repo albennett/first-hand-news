@@ -1,5 +1,5 @@
-app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth",
-  function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth) {
+app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth", "Upload","$timeout",
+  function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth, Upload, $timeout ) {
 
   var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
   var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories")
@@ -11,11 +11,11 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   var createdCategoryId = "";
   $scope.categoryTitle = "";
   $scope.storyTitle = "";
-  $scope.imageInput = "";
   $scope.locationInput = "";
   storyCreated = {};
   $scope.checkedInput = false;
   $('#CategoryModal').modal();
+  storyCreated.userImages = "";
 
 
   $scope.logout = function(){
@@ -63,7 +63,6 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
     storyCreated.title = $scope.storyTitle;
     storyCreated.rating = 0;
     storyCreated.anonymous = $scope.checkedInput;
-    storyCreated.image = $scope.imageInput;
     storyCreated.location = $scope.locationInput;
     storyCreated.profileImage = $scope.authData.facebook.profileImageURL;
     $scope.allStories.$add(storyCreated);
@@ -73,5 +72,24 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $('.dropdown-menu').find('input').click(function (e) {
     e.stopPropagation();
   });
+
+
+// testing images
+
+$scope.AddImages = function(files) {
+
+  Upload.base64DataUrl(files).then(function(base64Urls){
+    console.log("base64urls", base64Urls);
+    storyCreated.userImages = base64Urls;   
+    });
+
+  };
+
+// 
+
+
+
+
+
 
 }]);

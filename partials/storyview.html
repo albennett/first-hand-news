@@ -4,8 +4,9 @@
 
   <div class="starter-template">
 <!-- Title and image of story -->
-<h4> Return to <a href="#/category/{{storiesArray[1].$value}}">{{storiesArray[0].$value}}</a></h4>
+		<h4> Return to <a href="#/category/{{storiesArray[1].$value}}">{{storiesArray[0].$value}}</a></h4>
 
+<!-- disabled voting if voted is true -->
 		<span class="title-story">{{ storiesArray[9].$value}}</span>
 			<span ng-disabled="voted">
 				<button ng-click="incrementVote()" type="button" class="btn btn-default btn-sm">
@@ -13,19 +14,16 @@
 				  <span class="count">{{RateRef.$value}}</span>
 		    </button>
 			</span>
-		<p class="content-size">{{ storiesArray[5].$value }} </p>
+		<p class="content-size">{{ storiesArray[4].$value }} </p>
 		<!-- <div ng-show="storiesArray[2].$value.length"> -->
-		<img ng-show="storiesArray[4].$value.length" align="middle" class="image-storyview" src="{{storiesArray[4].$value}}">
-		<!-- </div> -->
+		<img src="{{storiesArray[10][0]}}">
 
-		<div ng-hide="">
 		<!-- hide author & image if marked as anonymous -->
 		<p ng-hide="Anonymous" class="content-size"> Author : <a href="#/user/{{theId}}"> {{ storiesArray[6].$value }}</a> </p>
-		<!-- <image src="{{storiesArray[].$value}}"></image> -->
+		
 		<p ng-show="Anonymous" class="content-size"> Author: Anonymous </p>
-		<image ng-hide="Anonymous" src="{{userImage[7].$value}}"></image>
-		</div>
-<!-- disabled voting if voted is true -->
+		<!-- <img ng-hide="Anonymous" src="{{storiesArray[7].$value}}"> -->
+
 
 	</div>
 </div>

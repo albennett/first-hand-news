@@ -53,8 +53,6 @@
 			<div class="checkbox">
 			  <label><input id="checkedAnonymous" ng-model="checkedInput" type="checkbox" name="anonymous" value="anonymous" type="checkbox" >Anonymous</label>
 			</div>
-			<!-- add image -->
-			<div>Add an image from the web: <input type="text" ng-model="imageInput" placeholder="  Image url" class="input-large form-control"></div>
 			<!-- add city/country -->
 			<div>City/Country experience took place in: <input type="text" ng-model="locationInput" placeholder="location" class="input-large form-control"></div>
 			<!-- submit button -->
@@ -64,3 +62,41 @@
 		</div>	
 	</div>	
 </div>
+
+
+<!-- testing image -->
+
+<form class="form-horizontal" ng-submit="AddImages(files)">
+  <fieldset>
+
+      <!-- Images -->
+      <div class="form-group">
+          <label class="col-md-4 control-label" for="pictures">Add Pictures</label>
+              <div class="col-md-4">
+                  <input id="pictures" type="file" ngf-select ng-model="files"  name="file"  
+                    accept="image/*" ngf-max-size="2MB"  ngf-keep="true" ngf-keep-distinct="true" class="btn btn-primary"/>
+              </div>
+      </div>
+
+      <!-- Show image thumb and remove option -->
+      <div class="form-group">
+          <div class="row">
+              <div class="col-sm-2" ng-repeat="file in files">
+                 <img ngf-thumbnail="!file.$error && file" class="thumb"> <span class="glyphicon glyphicon-remove-circle" ng-click="remove(files, $index)"></span>
+              </div>
+          </div>
+      </div>
+
+
+      <!-- Button -->
+      <div class="form-group">
+          <label class="col-md-4 control-label" for="singlebutton"></label>
+              <div class="col-md-4">
+                  <input id="singlebutton" ng-disabled="!files" name="singlebutton" class="btn btn-primary" type="submit" value="Publish" />
+              </div>
+      </div>
+
+  </fieldset>
+</form>
+
+            <!--  -->
