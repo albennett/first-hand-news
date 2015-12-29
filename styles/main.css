@@ -478,8 +478,8 @@ input[type=text]{
   .top-home{
   	margin-top: 60px;
   	margin-bottom: -30px;
-  	text-decoration: underline;
   	color: #0B99BC;
+  	font-size: 3em;
   }
   
 #left{
@@ -493,6 +493,18 @@ input[type=text]{
 	border-bottom: thin gray solid;
 }
 
+.alert{
+    display: none;
+}
+
+.alert-it{
+	display:none;
+	padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
 
 /*story view*/
 
@@ -500,6 +512,7 @@ input[type=text]{
 	height:400px;
 	width:auto;
 	display:block;
+	padding-top:10px;
 }
 
 .heart{

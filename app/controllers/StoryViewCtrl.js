@@ -69,7 +69,8 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 			$scope.incrementVote = function() {
 //if user is not logged in, then 
 				if ($scope.authData === null) {
-					alert("Log In to vote");
+					// alert("Log In to vote");
+					$('.alert-it').show()
 				}
 // if user hasn't voted, then the uid and counter gets added 
 				if ($scope.voted === false){
@@ -82,7 +83,8 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 		          $scope.RateRef.$save();
 						});
 						 } else {
-							alert("can only vote once");
+							// alert("can only vote once");
+							$('.alert').show()
 						}
 				}
 		});

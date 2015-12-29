@@ -88,7 +88,11 @@ $scope.AddImages = function(files) {
 
   };
 
-// 
+  $(document).ready(function(){
+    $('.alert-photo').click(function(){
+        $('.alert').show()
+    }) 
+});
 
 
 
