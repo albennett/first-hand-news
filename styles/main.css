@@ -1,3 +1,37 @@
+.container {
+  position: relative;
+}
+.container img {
+  display: block;
+  width: 100%;
+}
+
+.days1{
+	position: absolute;
+	top: 46%;
+    left: 24%;
+}
+
+.days2{
+	position: absolute;
+	top:48%;
+	left: 58%;
+}
+
+.days0{
+	position: absolute;
+	top: 30%;
+	left:65%;
+}
+
+[class*="counter"] span {
+  font-size: 25px;
+  position: absolute;
+}
+
+
+
+
 body {
 	/*background-color: #fefefe;*/
 	background-color: white;
@@ -103,6 +137,13 @@ a:hover{
 	text-align: center;
 }
 
+
+@media screen and (max-width: 1050px) {
+    .days {
+        top: 26%;
+  		left: 23%;
+    }
+}
 
 @media screen and (max-width: 1110px) {
     .home-title-name {
@@ -235,29 +276,6 @@ a:hover{
 	height:1000px;
 }
 
-@media screen and (max-width: 1264px) {
-    .world-map {
-        height: 770px;
-    }
-}
-
-@media screen and (max-width: 927px) {
-    .world-map {
-        height: 650px;
-    }
-}
-
-@media screen and (max-width: 720px) {
-    .world-map {
-        height: 480px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .world-map {
-        height: 405px;
-    }
-}
 /*search input*/
 
 form{
