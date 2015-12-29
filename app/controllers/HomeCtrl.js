@@ -22,6 +22,11 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
     });
 
 
+$scope.storyRef.$loaded()
+.then(function(){
+
+  console.log("dkjaf", $scope.storyRef[3].userImages[0]);
+})
 
 //checks to see if user is logged in, restricted views implemented if not
     $scope.userLoggedIn = function(auth) {
