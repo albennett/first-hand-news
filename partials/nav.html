@@ -11,7 +11,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li ng-show="!userLoggedIn()"><a href="#/" data-toggle="modal" data-target="#LogInModal">Log-in</a></li>
+            <li ng-show="!userLoggedIn()"><a class="link-color" href="#/" data-toggle="modal" data-target="#LogInModal">Log-in</a></li>
 			<li ng-show="userLoggedIn()"><a href="#/home" id="home">Home</a></li>
 			<li ng-show="!userLoggedIn()"><a href="#/" id="notLoggedInHome">Home</a></li>
 			<li ng-show="userLoggedIn()" class="ng-hide"><a href="#/create" id="writestory">Write a Story</a></li>

@@ -17,8 +17,8 @@
 		<p class="content-size">{{ storiesArray[4].$value }} </p>
 		<!-- <div ng-show="storiesArray[2].$value.length"> -->
 		<img ng-show="storiesArray[10][0]" class="max-height"src="{{storiesArray[10][0]}}">
-		<img ng-show="storiesArray[10][0]" class = "max-height" src="{{storiesArray[10][1]}}">
-		<img ng-show="storiesArray[10][0]" class="max-height" src="{{storiesArray[10][2]}}">
+		<img ng-show="storiesArray[10][1]" class = "max-height" src="{{storiesArray[10][1]}}">
+		<img ng-show="storiesArray[10][2]" class="max-height" src="{{storiesArray[10][2]}}">
 
 		<!-- hide author & image if marked as anonymous -->
 		<p ng-hide="Anonymous" class="content-size"> Author : <a href="#/user/{{theId}}"> {{ storiesArray[6].$value }}</a> </p>

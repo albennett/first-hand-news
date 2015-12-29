@@ -11,8 +11,8 @@
 
             <h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
             <p ng-show="!story.anonymous" class="story-author"><a href="#/user/{{story.User}}"><img class="image-circle" src="{{story.profileImage}}"></a>{{story.name}}</p>  
-            <img ng-show="story.image.length" class="image-home-story" src="{{story.image}}">
-            <p ng-show="!story.image.length" class="content-size"> {{story.input | limitTo: 300}}<a class="readmore" href="#/story/{{story.$id}}">Read More</a></p>
+            <img class="image-home-story" src="{{story.userImages[0]}}">
+            <p class="content-size"> {{story.input | limitTo: 300}}<a class="readmore" href="#/story/{{story.$id}}">Read More</a></p>
             <footer class="line-story"></footer>
 
 					</div>

@@ -17,6 +17,18 @@ a{
 	color: gray;;
 }
 
+.navbar-inverse .navbar-nav>li>a:hover{
+	color:#f05b47;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar{
+	background-color: #f05b47;
+}
+
+.link-color{
+	color: black;
+}
+
 a:hover{
 	color: black;
 	text-decoration: none;
@@ -26,21 +38,21 @@ a:hover{
 	float:right;
 }
 
-#hahaha{
+#filter-div-cats{
 	text-align: center;
 	color:white;
 }
 
-#haha2{
+#allcats-div{
 	background-color: #0b99bc;
 	padding: 20px;
 }
 
-.haha-3{
+.cats-title-link{
 	color:white;
 }
 
-.haha4{
+.search-cats{
 	text-align: center;
 	width: 100%;
 	margin-bottom: 20px;
@@ -77,6 +89,9 @@ a:hover{
 }
 /*Home View*/
 
+.purpose{
+	font-weight: 300;
+}
 
 .home-title-name{
 	margin-top: -195px;
@@ -600,6 +615,7 @@ input[type=text]{
 
 .search{
 	background-color: white;
+	margin-top: 20px;
 }
 
 .input-large{

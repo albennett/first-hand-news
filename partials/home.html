@@ -5,7 +5,7 @@
       <img id="home-image" src="../images/girlportrait-edited.jpg">
       <h1 class="home-title-name">SHARE THE NEWS <br>THROUGH YOUR EYES</h1>
     </div>
-    <div id="explaining-div">We are not your normal news site. In a time where the truth can feel lost in translation or filtered through agendas, we have created a space to connect directly with those bearing witness on the ground. Here, you can listen to and share your first hand accounts of global events as they unfold.  </div>
+    <div id="explaining-div">We are not your normal news site. In a time where the truth can feel lost in translation or filtered through agendas, <span class="purpose">we have created a space to connect directly with those bearing witness on the ground.</span> Here, you can listen to and share your first hand accounts of global events as they unfold.  </div>
 
     <div class="world-map">
     <h1 id="featured-stories">Featured Stories</h1>
@@ -24,17 +24,17 @@
     });
     </script>
 
-    <h2 class="haha4">Browse News Categories 
+    <h2 class="search-cats">Browse News Categories 
       <span class="container-1">
         <span class="icon"><i class="fa fa-search"></i></span>
         <input ng-model="query" type="search" class="search rounded" id="search">
       </span>
     </h2>
     
-    <div id="haha2">
-        <div id="hahaha" ng-repeat="category in allCategories | filter: query">
+    <div id="allcats-div">
+        <div id="filter-div-cats" ng-repeat="category in allCategories | filter: query">
           <div id="{{category.$id}}">
-            <h1 id="{{category.$id}}"><a class="haha-3" href="#/category/{{category.$id}}">{{category.title}}</a></h1>
+            <h1 id="{{category.$id}}"><a class="cats-title-link" href="#/category/{{category.$id}}">{{category.title}}</a></h1>
           </div>
         </div>
     </div>
