@@ -1,7 +1,7 @@
-.container {
+.container-position {
   position: relative;
 }
-.container img {
+.container .map-photo {
   display: block;
   width: 100%;
 }
@@ -9,7 +9,7 @@
 .days1{
 	position: absolute;
 	top: 46%;
-    left: 24%;
+    left: 26%;
 }
 
 .days2{
@@ -20,17 +20,14 @@
 
 .days0{
 	position: absolute;
-	top: 30%;
-	left:65%;
+	top: 40%;
+	left:50%;
 }
 
 [class*="counter"] span {
   font-size: 25px;
   position: absolute;
 }
-
-
-
 
 body {
 	/*background-color: #fefefe;*/
@@ -133,7 +130,7 @@ a:hover{
 	color: white;
 	font-family: 'Montserrat', Arial, serif; 
 	font-weight: 700; 
-	font-size: 3.5em;
+	font-size: 3em;
 	text-align: center;
 }
 
@@ -527,7 +524,7 @@ input[type=text]{
 /*story view*/
 
 .max-height{
-	height:400px;
+	max-height:400px;
 	width:auto;
 	display:block;
 	padding-top:10px;

@@ -8,24 +8,15 @@
     <div id="explaining-div">We are not your normal news site. In a time where the truth can feel lost in translation or filtered through agendas, <span class="purpose">we have created a space to connect directly with those bearing witness on the ground.</span> Here, you can listen to and share your first hand accounts of global events as they unfold.  </div>
 
 
-    <div class="container">
-      <img src="../images/world-map.jpg" alt="">
+    <div class="container container-position">
+        <h2 id="featured-stories">Featured Stories</h2>
+      <img class="map-photo" src="../images/world-map.jpg" alt="">
       <div class="counter">
-        <button type="button" class="btn btn-md btn-danger days0 glyphicon glyphicon-asterisk" data-toggle="popover" data-content="<a href='#/story/{{storyRef[0].$id}}' >{{storyRef[0].title}}</a>"></button>
-        <button type="button" class="btn btn-md btn-danger days1 glyphicon glyphicon-asterisk" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?"></button>
-        <button type="button" class="btn btn-md btn-danger days2 glyphicon glyphicon-asterisk" data-toggle="popover" data-content="<a href='#/story/{{storyRef[0].$id}}' >{{storyRef[0].title}}</a>"></button>
+        <button type="button" class="btn btn-md btn-danger days0 glyphicon glyphicon-asterisk" data-toggle="popover" data-content="<a href='#/story/{{storyRef[1].$id}}' >{{storyRef[1].title}}</a>"></button>
+        <button type="button" class="btn btn-md btn-danger days1 glyphicon glyphicon-asterisk" data-toggle="popover" data-content="<a href='#/story/{{storyRef[0].$id}}' >{{storyRef[0].title}}</a>"></button>
+        <button type="button" class="btn btn-md btn-danger days2 glyphicon glyphicon-asterisk" data-toggle="popover" data-content="<a href='#/story/{{storyRef[2].$id}}' >{{storyRef[2].title}}</a>"></button>
+      </div>
     </div>
-    </div>
-
-    <!-- <div class="world-map">
-    <h1 id="featured-stories">Featured Stories</h1>
-
-
-    <button type="button" class="btn btn-md btn-danger button-map glyphicon glyphicon-asterisk" data-toggle="popover" data-content="And here's some amazing content. It's very engaging. Right?"></button>
-
-    <button type="button" class="btn btn-md btn-danger button-map2 glyphicon glyphicon-asterisk" data-toggle="popover" data-content="<link href='www.facebook.com'>"></button>
-
-    </div> -->
     
     <script>
     $(document).ready(function(){
@@ -33,12 +24,12 @@
     });
     </script>
 
-    <!-- <h2 class="search-cats">Browse News Categories  -->
-      <!-- <span class="container-1"> -->
-        <!-- <span class="icon"><i class="fa fa-search"></i></span> -->
-        <!-- <input ng-model="query" type="search" class="search rounded" id="search">
+    <h2 class="search-cats">Browse News Categories 
+      <span class="container-1">
+        <span class="icon"><i class="fa fa-search"></i></span>
+        <input ng-model="query" type="search" class="search rounded" id="search">
       </span>
-    </h2> -->
+    </h2>
     
     <div id="allcats-div">
         <div id="filter-div-cats" ng-repeat="category in allCategories | filter: query">
@@ -47,6 +38,7 @@
           </div>
         </div>
     </div>
+</div>
    
 <!-- if logged in home -->
 
@@ -63,7 +55,7 @@
 
           <div id="left" class="categories" ng-repeat="category in allCategories |filter: query">
             <div class="" id="{{category.$id}}">
-              <h2 class="font-cat" id="{{category.$id}}"><a class="categories-color" href="#/category/{{category.$id}}">{{category.title}}</a></h2>
+              <h3 class="font-cat" id="{{category.$id}}"><a class="categories-color" href="#/category/{{category.$id}}">{{category.title}}</a></h3>
             </div>
         </div>
       </div>
