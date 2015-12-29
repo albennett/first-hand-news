@@ -55,48 +55,37 @@
 			</div>
 			<!-- add city/country -->
 			<div>City/Country experience took place in: <input type="text" ng-model="locationInput" placeholder="location" class="input-large form-control"></div>
+			<!-- testing image -->
+
+			<form ng-submit="AddImages(files)">
+		
+			      <!-- Images -->
+			      <span class="form-group">
+			              <span>
+			                  <input id="pictures" type="file" ngf-select ng-model="files"  name="file"  
+			                    accept="image/*" ngf-max-size="2MB"  ngf-keep="true" ngf-keep-distinct="true" class="btn btn-primary"/>
+			              </span>
+			      </span>
+
+			      <!-- Show image thumb and remove option -->
+			              <span ng-repeat="file in files">
+			                 <img ngf-thumbnail="!file.$error && file" class="thumb"></span>
+			              </span>
+
+			      <!-- Button -->
+			      <span class="form-group">
+		              <span class="form-styling">
+		                  <input id="singlebutton" ng-disabled="!files" name="singlebutton" class="btn btn-primary" type="submit" value="Submit Photo" />
+		              </span>
+			      </span>
+
+
+
+            <!--  -->
 			<!-- submit button -->
-			<button type="button" ng-show="userLoggedIn()" ng-click="Stories()" class="btn btn-default btn-lg">Submit</button>
+			<button type="button" ng-show="userLoggedIn()" ng-click="Stories()" class="btn btn-default btn-lg submit-button">Submit</button>
 			<!-- only shows if not logged in -->
 			<p ng-show="!userLoggedIn()">Log in to write stories</p>
 		</div>	
 	</div>	
 </div>
-
-
-<!-- testing image -->
-
-<form class="form-horizontal" ng-submit="AddImages(files)">
-  <fieldset>
-
-      <!-- Images -->
-      <div class="form-group">
-          <label class="col-md-4 control-label" for="pictures">Add Pictures</label>
-              <div class="col-md-4">
-                  <input id="pictures" type="file" ngf-select ng-model="files"  name="file"  
-                    accept="image/*" ngf-max-size="2MB"  ngf-keep="true" ngf-keep-distinct="true" class="btn btn-primary"/>
-              </div>
-      </div>
-
-      <!-- Show image thumb and remove option -->
-      <div class="form-group">
-          <div class="row">
-              <div class="col-sm-2" ng-repeat="file in files">
-                 <img ngf-thumbnail="!file.$error && file" class="thumb"> <span class="glyphicon glyphicon-remove-circle" ng-click="remove(files, $index)"></span>
-              </div>
-          </div>
-      </div>
-
-
-      <!-- Button -->
-      <div class="form-group">
-          <label class="col-md-4 control-label" for="singlebutton"></label>
-              <div class="col-md-4">
-                  <input id="singlebutton" ng-disabled="!files" name="singlebutton" class="btn btn-primary" type="submit" value="Publish" />
-              </div>
-      </div>
-
-  </fieldset>
-</form>
-
-            <!--  -->

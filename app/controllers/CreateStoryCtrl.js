@@ -12,10 +12,13 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   $scope.categoryTitle = "";
   $scope.storyTitle = "";
   $scope.locationInput = "";
-  storyCreated = {};
+  var storyCreated = {};
   $scope.checkedInput = false;
   $('#CategoryModal').modal();
   storyCreated.userImages = "";
+  storyCreated.Category = "";
+  storyCreated.CatTitle = "";
+
 
 
   $scope.logout = function(){

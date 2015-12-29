@@ -481,6 +481,12 @@ input[type=text]{
 
 /*story view*/
 
+.max-height{
+	height:400px;
+	width:auto;
+	display:block;
+}
+
 .heart{
 	color: #f05b47;
 }
@@ -613,6 +619,35 @@ input[type=text]{
 .text-muted{
 	font-family: 'Montserrat', Arial, serif; 
 	font-size: 2.5em;
+}
+
+
+
+/*upload images*/
+
+form{
+	width: auto;
+}
+
+#pictures{
+	background-color: white;
+	color: #f05b47;
+	display: inline-block;
+}
+
+input#singlebutton{
+	background-color: #f05b47;
+	/*margin-top: -100px;
+    margin-left: 150px;*/
+}
+
+.submit-button{
+	display: block;
+	margin-top:10px;
+}
+
+.thumb{
+	height: 100px;
 }
 
 /*facebook button*/
