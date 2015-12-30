@@ -149,7 +149,7 @@ a:hover{
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
     .home-title-name {
         font-size: 1.8em;
         margin-top: -90px;
@@ -350,7 +350,6 @@ input[type=text]{
     #explaining-div {
         margin-top: -100px;
         font-size: 2.2em;
-        padding: 5px 3px 5px 3px;
     }
 }
 
