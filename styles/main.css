@@ -178,6 +178,7 @@ a:hover{
 
 .home-story-padding{
 	color: #0b99bc;
+	font-size: 30px;
 }
 
 .home-title-color{
@@ -494,7 +495,7 @@ input[type=text]{
   	margin-top: 60px;
   	margin-bottom: -30px;
   	color: #0B99BC;
-  	font-size: 3em;
+  	font-size: 2.5em;
   }
   
 #left{
@@ -540,7 +541,7 @@ input[type=text]{
 }
 
 .title-story{
-	font-size: 3em;
+	font-size: 2.5em;
 	font-style: bold;
 	color: #0b99bc;
 }
