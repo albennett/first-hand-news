@@ -8,20 +8,20 @@
 
 .days1{
 	position: absolute;
-	top: 46%;
+	top: 53%;
     left: 26%;
 }
 
 .days2{
 	position: absolute;
-	top:48%;
-	left: 58%;
+	top:55%;
+	left: 59%;
 }
 
 .days0{
 	position: absolute;
-	top: 40%;
-	left:50%;
+	top: 48%;
+	left:52%;
 }
 
 [class*="counter"] span {
