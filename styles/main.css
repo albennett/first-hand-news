@@ -458,14 +458,7 @@ input[type=text]{
     .icon-bar{
     	background-color: #f05b47;;
     }
-
-    .mobile-image{
-    	background-image: url("../images/world-map.png");
-    	background-size: 100%;
-		background-repeat: no-repeat;
-		height: 165px;
-
-    }
+    
 }
 
 
@@ -530,6 +523,19 @@ input[type=text]{
 	display:block;
 	padding-top:10px;
 }
+
+@media screen and (max-width: 650px) {
+
+   .max-height{
+   	max-height: 240px;
+   }
+
+   .image-home-story{
+   	max-height: 240px;
+   }
+
+}
+
 
 .heart{
 	color: #f05b47;
