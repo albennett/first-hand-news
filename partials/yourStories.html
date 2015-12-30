@@ -31,8 +31,8 @@
 		<div ng-repeat="story in yourStoriesArray | filter: !anonymous" class="img-wrap" ng-hide="signedIn" class="col-sm-8 page-header">
 			<h1 id="{{story.$id}}"><a class="home-story-padding" href="#/story/{{story.$id}}">{{story.title}}</a></h1>
             <p><a href="#/category/{{story.Category}}">{{story.CatTitle}}</a></p>
-            <img ng-show="story.image.length" class="image-home-story" src="{{story.image}}">
-            <p ng-show="!story.image.length" class="content-size"> {{story.input | limitTo: 300}}<a href="#/story/{{story.$id}}" class="readmore">Read More</a></p>
+            <img class="image-home-story" src="{{story.userImages[0]}}">
+            <p class="content-size"> {{story.input | limitTo: 300}}<a href="#/story/{{story.$id}}" class="readmore">Read More</a></p>
             <footer class="line-story"></footer>
 		</div>
 

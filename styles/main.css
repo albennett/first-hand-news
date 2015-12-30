@@ -363,7 +363,7 @@ input[type=text]{
 }
 
 .img-wrap {
-	border-bottom: thin gray solid;
+	border-bottom: 1px solid #eee
 }
 
 @media screen and (max-width: 800px) {
@@ -506,7 +506,7 @@ input[type=text]{
 #right{
 	margin-right: 70px;
 	margin-top: 60px;
-	border-bottom: thin gray solid;
+	border-bottom: 1px solid #eee;
 }
 
 .alert{

@@ -48,7 +48,7 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
     
     $scope.yourStoriesArray.$loaded()
     .then(function(){
-
+    	console.log("storyy", $scope.yourStoriesArray);
 	  	$scope.yourStoriesArray.forEach(function(element){
 	  		if (element.anonymous === true){
 	  			$scope.anonymous = true;
