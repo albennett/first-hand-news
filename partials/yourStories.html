@@ -24,7 +24,7 @@
             <p class="content-size"> {{story.input | limitTo: 300}}<a class="readmore" href="#/story/{{story.$id}}">Read More</a></p>
             <button type="button" ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)" class="btn btn-default">Delete</button>
             <footer class="line-story"></footer>
-    </div>
+    	</div>
 
        <!-- different ng-repeat if not own profile -->
 
@@ -36,19 +36,7 @@
             <footer class="line-story"></footer>
 		</div>
 
-
-
-		<!-- title of story -->
-			<!-- <h2><a class="story-title" href="#/story/{{story.$id}}">{{story.title}}</a></h2> -->
-			<!-- input of story -->
-			<!-- <p id="{{story.$id}}">{{ story.input | limitTo: 150 }} <a href="#/story/{{story.$id}}">Read More</a> </p>
-			<button type="button" class="btn btn-secondary btn-md" ng-show="canYouDelete()" ng-click="yourStoriesArray.$remove(story)">Delete</button>
-		 </div> -->
-<!-- different ng-repeat if not own profile -->
-		<!-- <div ng-repeat="story in yourStoriesArray | filter: !anonymous" class="img-wrap" ng-hide="signedIn"  class="col-sm-8 page-header">
-			<h2><a href="#/story/{{story.$id}}">{{story.title}}</a></h2>
-			<p id="{{story.$id}}">{{ story.input }}</p>
-		</div> -->
-
 	</div>
+</div>
+
 </div>
