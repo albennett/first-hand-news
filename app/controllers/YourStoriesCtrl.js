@@ -3,7 +3,6 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
 
   	var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
   	$scope.authData = $firebaseAuth(ref).$getAuth();
-  	console.log("$scope.authData", $scope.authData);
   	var storyRef = new Firebase("https://first-hand-accounts.firebaseio.com/stories");
   	var userId = $routeParams.user_id;
   	var refUser = new Firebase("https://first-hand-accounts.firebaseio.com/users/" + userId);
@@ -52,12 +51,10 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
 //show if story with user who created it equals the userId in routeparams
 
     var query = storyRef.orderByChild("User").equalTo(userId);
-    console.log("query", query);
     $scope.yourStoriesArray = $firebaseArray(query);
     
     $scope.yourStoriesArray.$loaded()
     .then(function(){
-    	console.log("storyy", $scope.yourStoriesArray);
 	  	$scope.yourStoriesArray.forEach(function(element){
 	  		if (element.anonymous === true){
 	  			$scope.anonymous = true;

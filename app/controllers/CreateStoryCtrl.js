@@ -37,7 +37,6 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
       storyCreated.Category = $scope.selectedCategory.$id;
       storyCreated.CatTitle = $scope.selectedCategory.title;
     } else { //if category is created, then run sendCategory function
-      console.log("created", $scope.categoryTitle);
       $scope.sendCategory();
     }
   }
@@ -54,9 +53,6 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
        storyCreated.CatTitle = $scope.categoryTitle;
     }) 
   }
-
-// var path = "#/user/" + $scope.authData.uid;
-// console.log("path", path);
 
 //stores story information when you click submit on create view
   $scope.Stories = function () {
@@ -82,7 +78,6 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
 $scope.AddImages = function(files) {
 
   Upload.base64DataUrl(files).then(function(base64Urls){
-    console.log("base64urls", base64Urls);
     storyCreated.userImages = base64Urls;   
     });
 
