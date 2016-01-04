@@ -1,7 +1,7 @@
 # first-hand-accounts
-<h2>Platform for first hand accounts.</h2>
+<p>Platform for first hand accounts.</p>
 
-<h4>We are not your normal news site. In a time where the truth can feel lost in translation or filtered through agendas, we have created a space to connect directly with those bearing witness on the ground. Here, you can listen to and share your first hand accounts of global events as they unfold.</h4>
+<p>We are not your normal news site. In a time where the truth can feel lost in translation or filtered through agendas, we have created a space to connect directly with those bearing witness on the ground. Here, you can listen to and share your first hand accounts of global events as they unfold.</p>
 
 <h3>Technologies Used:</h3>
 <li>AngularJS</li>
