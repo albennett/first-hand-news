@@ -15,12 +15,12 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 
 
 
-
+//logs out the user
 	$scope.logout = function(){
 	  $firebaseAuth(ref).$unauth();
 	  console.log("logged out");
 	};
-
+//checks to see if user is logged in
 	$scope.userLoggedIn = function(auth) {
     if ($scope.authData)  {
       return true;
@@ -29,7 +29,7 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 
   $scope.storiesArray.$loaded()
   .then(function(){
-
+//checks if user has uploaded an image for story.
   	if ($scope.storiesArray[2].$value === ""){
   		$scope.images = false;
   	}
@@ -65,7 +65,7 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 			$scope.incrementVote = function() {
 //if user is not logged in, then 
 				if ($scope.authData === null) {
-					// alert("Log In to vote");
+					// alert message shows to log in
 					$('.alert-it').show()
 				}
 // if user hasn't voted, then the uid and counter gets added 

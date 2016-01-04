@@ -35,7 +35,7 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
   			}
   		}
   	}
-
+//delete button shows if it's your stories
   	$scope.canYouDelete = function(){
 	  	if ($scope.authData.uid === userId){
 	  		return true;
