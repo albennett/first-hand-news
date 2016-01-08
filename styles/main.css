@@ -718,12 +718,6 @@ input#singlebutton{
    	max-height: 240px;
    }
 
-	.mobile-image {
-		background-image: url(../images/world-map.png);
-		width: 100%;
-		height: 300px;
-	}
-
 }
 
 
@@ -759,21 +753,22 @@ input#singlebutton{
     }
 }
 
-@media only screen and (min-device-width: 350px) and (max-device-width: 500px) and (orientation : portrait) { 
+@media only screen and (min-device-width: 310px) and (max-device-width: 500px) and (orientation : portrait) { 
     /*//iPhone 6 Portrait*/
     #explaining-div {
-        margin-top: -77px;
+        margin-top: -130px;
         font-size: 1.5em;
+        padding: 15px 35px;
         
     }
     .content-size{
-    	font-size: 2.5em;
+    	font-size: 1.3em;
     	margin: 0;
     }
 
     .home-title-name{
     	font-size: 1.4em;
-    	margin-top: -139px;
+    	margin-top: -60px;
     }
 
     .icon-bar{
@@ -781,17 +776,76 @@ input#singlebutton{
     }
 
     .responsive-content{
-    	font-size: 1.8em;
+    	font-size: 1.3em;
     }
 
     .categories-color{
-    	font-size: 1.3em;
+    	font-size: .9em;
     }
     .content-size2{
     	font-size: 1.5em;
     }
 
-    .title-story{
-    	font-size: 4.5em;
+    .cats-title-link{
+    	font-size: 26px;
     }
 
+    .search-cats{
+    	font-size: 20px;
+    }
+
+    #featured-stories{
+    	padding-left: 75px;
+    	padding-top: 0px;
+    }
+
+    .title-story{
+    	font-size: 2em;
+    }
+
+    .home-story-padding{
+    	font-size: 27px;
+    }
+    .margin-cat-story{
+    	margin-top: -37px;
+    }
+
+    .margin-cat-title{
+    	font-size: 18px;
+    }
+
+    .navbar-brand{
+    	font-size: 1.3em;
+    }
+
+    .search{
+    	width: 310px;
+    }
+    .container-1{
+    	margin-top: 1px;
+    }
+
+    #right-home{
+    	padding: 7px;
+    }
+
+    .image-home-story{
+    	max-width: 300px;
+    }
+
+    .input-large{
+    	width: 290px;
+    }
+
+    #title{
+    	width: 100%;
+    }
+
+    .alert-photo{
+    	margin-top: 10px;
+    }
+
+    .top-home{
+    	font-size: 2.2em;
+    }
+}
