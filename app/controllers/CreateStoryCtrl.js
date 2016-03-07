@@ -19,8 +19,6 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
   storyCreated.Category = "";
   storyCreated.CatTitle = "";
 
-
-
   $scope.logout = function(){
     $firebaseAuth(ref).$unauth();
     console.log("logged out");
@@ -45,13 +43,13 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
     //add the category to categories in firebase
     $scope.allCategories.$add({
       userId: $scope.authData.uid,
-      title: $scope.categoryTitle   
+      title: $scope.categoryTitle
     }).then(function(createdcat){
-       createdCategoryId = createdcat.key();
-       //stores the new category id in storyCreated
-       storyCreated.Category = createdCategoryId;
-       storyCreated.CatTitle = $scope.categoryTitle;
-    }) 
+      createdCategoryId = createdcat.key();
+      //stores the new category id in storyCreated
+      storyCreated.Category = createdCategoryId;
+      storyCreated.CatTitle = $scope.categoryTitle;
+    })
   }
 
 //stores story information when you click submit on create view
@@ -75,23 +73,16 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
 
 // testing images
 
-$scope.AddImages = function(files) {
-
-  Upload.base64DataUrl(files).then(function(base64Urls){
-    storyCreated.userImages = base64Urls;   
+  $scope.AddImages = function(files) {
+    Upload.base64DataUrl(files).then(function(base64Urls){
+      storyCreated.userImages = base64Urls;
     });
-
   };
 
   $(document).ready(function(){
     $('.alert-photo').click(function(){
         $('.alert').show()
-    }) 
-});
-
-
-
-
-
+    })
+  });
 
 }]);

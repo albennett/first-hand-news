@@ -1,6 +1,6 @@
 app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebaseArray", "$firebaseAuth", "StorageFactory",
   function($scope, $location, $firebaseObject, $firebaseArray, $firebaseAuth, StorageFactory){
-  
+
     var ref = new Firebase("https://first-hand-accounts.firebaseio.com/");
     var userExists = false;
     $scope.authData = $firebaseAuth(ref).$getAuth();
@@ -17,7 +17,7 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
 //adds event listener to grab id of categories
 
     document.querySelector("body").addEventListener("click", function(event) {
-      eventId = event.target.id; 
+      eventId = event.target.id;
     });
 
 //checks to see if user is logged in, restricted views implemented if not
@@ -40,7 +40,7 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
       console.log("logged out");
     };
 
-    $scope.uidRefData.$loaded() 
+    $scope.uidRefData.$loaded()
       .then(function(){
     //once uidRefData is loaded, then if there's a value, user is already saved and userExists changes to true
         if ($scope.uidRefData.$value !== null) {
@@ -55,6 +55,4 @@ app.controller("HomeCtrl", ["$scope", "$location", "$firebaseObject", "$firebase
           });
         }
       });
-
-    
 }]);

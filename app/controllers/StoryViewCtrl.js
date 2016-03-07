@@ -1,6 +1,6 @@
 app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$firebaseAuth", "$routeParams", "$firebaseObject",
   function($scope, $location, $firebaseArray, $firebaseAuth, $routeParams, $firebaseObject) {
-	
+
 	var selectStoryId = $routeParams.story_id;
 	$scope.voted = false;
 	var ref = new Firebase("https://first-hand-accounts.firebaseio.com");
@@ -30,22 +30,16 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
   $scope.storiesArray.$loaded()
   .then(function(){
 //checks if user has uploaded an image for story.
-  	if ($scope.storiesArray[2].$value === ""){
-  		$scope.images = false;
-  	}
-
-  	 $scope.theId = $scope.storiesArray[1].$value;
-
-  	 $scope.Anonymous = $scope.storiesArray[3].$value;
-
+    if ($scope.storiesArray[2].$value === ""){
+    	$scope.images = false;
+    }
+    $scope.theId = $scope.storiesArray[1].$value;
+    $scope.Anonymous = $scope.storiesArray[3].$value;
 	  var getImage = new Firebase ("https://first-hand-accounts.firebaseio.com/users/" + $scope.theId);
 	  $scope.userImage = $firebaseArray(getImage);
-
   })
 
-
-
-//if there's already an array for users voted, then change vote to true if user's current uid has been previously stored under array 
+//if there's already an array for users voted, then change vote to true if user's current uid has been previously stored under array
   if ($scope.storiesUsersArray) {
 		$scope.storiesUsersArray.$loaded()
 		.then(function() {
@@ -55,20 +49,19 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 				} else {
 					$scope.voted = false;
 				}
-			});	
+			});
 		});
 	}
 
 	$scope.storiesUsersArray.$loaded()
     .then(function() {
-
 			$scope.incrementVote = function() {
-//if user is not logged in, then 
+//if user is not logged in, then
 				if ($scope.authData === null) {
 					// alert message shows to log in
 					$('.alert-it').show()
 				}
-// if user hasn't voted, then the uid and counter gets added 
+// if user hasn't voted, then the uid and counter gets added
 				if ($scope.voted === false){
 					$scope.storiesUsersArray.$add($scope.authData.uid);
 					$scope.voted = true;
@@ -78,11 +71,11 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 							$scope.RateRef.$value++;
 		          $scope.RateRef.$save();
 						});
-						 } else {
-							// alert("can only vote once");
-							$('.alert').show()
-						}
+				} else {
+					// alert("can only vote once");
+				 $('.alert').show()
 				}
+			}
 		});
 
 }]);
