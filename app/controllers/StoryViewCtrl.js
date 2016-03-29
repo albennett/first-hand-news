@@ -59,18 +59,17 @@ app.controller("StoryViewCtrl", ["$scope", "$location", "$firebaseArray", "$fire
 //if user is not logged in, then
       if ($scope.authData === null) {
 	// alert message shows to log in
-	$('.alert-it').show()
+      	$('.alert-it').show()
       }
 // if user hasn't voted, then the uid and counter gets added
       if ($scope.voted === false){
-	$scope.storiesUsersArray.$add($scope.authData.uid);
-	$scope.voted = true;
-	console.log("can vote");
-	$scope.RateRef.$loaded()
+      	$scope.storiesUsersArray.$add($scope.authData.uid);
+      	$scope.voted = true;
+      	$scope.RateRef.$loaded()
     	.then(function() {
-	  $scope.RateRef.$value++;
-          $scope.RateRef.$save();
-	});
+    	  $scope.RateRef.$value++;
+        $scope.RateRef.$save();
+	     });
       } else {
       // alert("can only vote once");
         $('.alert').show()

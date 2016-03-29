@@ -27,20 +27,19 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
     if ($scope.authData){
       $scope.canYouSeeAnonymous = function() {
         if ($scope.authData.uid === userId){
-  	  return true;
-  	}
-       }
-     }
+  	     return true;
+  	    }
+      }
+    }
 //delete button shows if it's your stories
     $scope.canYouDelete = function(){
       if ($scope.authData.uid === userId){
-	return true;
+	     return true;
       }
     }
 
     $scope.logout = function(){
       $firebaseAuth(ref).$unauth();
-      console.log("logged out");
     };
 //show if story with user who created it equals the userId in routeparams
     var query = storyRef.orderByChild("User").equalTo(userId);
@@ -49,9 +48,9 @@ app.controller("YourStoriesCtrl", ["$scope", "$location", "$firebaseObject", "$f
     $scope.yourStoriesArray.$loaded()
     .then(function(){
       $scope.yourStoriesArray.forEach(function(element){
-	if (element.anonymous === true){
-	  $scope.anonymous = true;
-	}
+  	    if (element.anonymous === true){
+  	     $scope.anonymous = true;
+  	    }
       });
     })
 }]);

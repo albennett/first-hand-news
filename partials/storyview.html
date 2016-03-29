@@ -8,24 +8,24 @@
 
 <!-- disabled voting if voted is true -->
 		<span class="title-story">{{ storiesArray[9].$value}}</span>
-			<span ng-disabled="voted">
-				<button ng-click="incrementVote()" type="button" class="btn btn-default btn-sm">
-		      <span class="glyphicon glyphicon-heart heart"></span> 
-				  <span class="count">{{RateRef.$value}}</span>
-		    </button>
-			</span>
+		<span ng-disabled="voted">
+			<button ng-click="incrementVote()" type="button" class="btn btn-default btn-sm">
+	      <span class="glyphicon glyphicon-heart heart"></span>
+			  <span class="count">{{RateRef.$value}}</span>
+	    </button>
+		</span>
 
-			<div class="alert alert-success alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            You can only vote once.
-        </div>
+		<div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          You can only vote once.
+    </div>
 
-      <div class="alert-it alert-success alert-dismissable">
-            You must be logged in to vote.
-        </div>
+    <div class="alert-it alert-success alert-dismissable">
+      You must be logged in to vote.
+    </div>
 		<!-- hide author & image if marked as anonymous -->
 		<p ng-hide="Anonymous" class="content-size"> Author : <a href="#/user/{{storiesArray[2].$value}}"> {{ storiesArray[6].$value }}</a> </p>
-		
+
 		<p ng-show="Anonymous" class="content-size"> Author: Anonymous </p>
 		<!-- <img ng-hide="Anonymous" src="{{storiesArray[7].$value}}"> -->
 		<p class="content-size">{{ storiesArray[4].$value }} </p>
