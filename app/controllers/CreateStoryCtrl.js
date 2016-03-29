@@ -64,6 +64,8 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
       location: $scope.locationInput,
       profileImage: $scope.authData.facebook.profileImageURL
     })
+    $scope.allStories.$add(storyCreated);
+    $location.path("#/user/" + $scope.authData.uid);
   }
 //code for drop down
   $('.dropdown-menu').find('input').click(function (e) {
