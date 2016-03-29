@@ -54,16 +54,16 @@ app.controller("CreateStoryCtrl", ["$scope", "$location", "$firebaseObject", "$f
 
 //stores story information when you click submit on create view
   $scope.Stories = function () {
-    storyCreated.User = $scope.authData.uid;
-    storyCreated.name = $scope.authData.facebook.displayName;
-    storyCreated.input = $scope.storyInput;
-    storyCreated.title = $scope.storyTitle;
-    storyCreated.rating = 0;
-    storyCreated.anonymous = $scope.checkedInput;
-    storyCreated.location = $scope.locationInput;
-    storyCreated.profileImage = $scope.authData.facebook.profileImageURL;
-    $scope.allStories.$add(storyCreated);
-    $location.path("#/user/" + $scope.authData.uid);
+    storyCreated.push({
+      User: $scope.authData.uid,
+      name: $scope.authData.facebook.displayName,
+      input: $scope.storyInput,
+      title: $scope.storyTitle,
+      rating: 0,
+      anonymous: $scope.checkedInput,
+      location: $scope.locationInput,
+      profileImage: $scope.authData.facebook.profileImageURL
+    })
   }
 //code for drop down
   $('.dropdown-menu').find('input').click(function (e) {
